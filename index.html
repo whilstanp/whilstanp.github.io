@@ -25,12 +25,12 @@
 </script>
 <script>
   let deferredPrompt;
-  window.addEventListener('beforeinstallprompt', function(event) {
+  window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
     btnAdd.style.display = 'block';
 });
   btnAdd.addEventListener('click', (e) => {
-  btnAdd.style.display = 'none';
+  btnAdd.style.display = 'initial';
   deferredPrompt.prompt();
   deferredPrompt.userChoice
     .then((choiceResult) => {
