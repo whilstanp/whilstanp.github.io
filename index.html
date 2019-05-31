@@ -27,9 +27,6 @@
   let deferredPrompt;
   window.addEventListener('beforeinstallprompt', function(event) {
     deferredPrompt = e;
-  });
-  btnAdd.addEventListener('click', (e) => {
-    btnAdd.style.display = 'initial';
     deferredPrompt.prompt();
     deferredPrompt.userChoice
       .then((choiceResult) => {
@@ -39,7 +36,7 @@
         console.log('User dismissed the A2HS prompt');
       }
       deferredPrompt = null;
-    });
+      });
   });
 </script>
 <div class="title">
