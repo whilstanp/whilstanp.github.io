@@ -16,13 +16,6 @@
   <h1>Progressive Web Apps</h1>
 </div>
 <script src="/script.js"></script>
-<script>
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker
-           .register('/sw.js')
-           .then(function() { 
-    console.log("Service Worker Registered"); });
-}
 </script>
 <div class="content">
   <div class="course-feature" id="installable">
