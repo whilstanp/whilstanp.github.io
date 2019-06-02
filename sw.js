@@ -1,12 +1,23 @@
-self.addEventListener('install', (event) => {
-  console.log('👷', 'install', event);
-  self.skipWaiting();
-});
-self.addEventListener('activate', (event) => {
-  console.log('👷', 'activate', event);
-  return self.clients.claim();
+importScripts('/script.js');
+self.addEventListener('install', function(e) {
+ e.waitUntil(
+   caches.open('pwa').then(function(cache) {
+     return cache.addAll([
+       '/',
+       '/index.html',
+       '/index.html?homescreen=1',
+       '/?homescreen=1',
+       '/styles/main.css',
+       '/scripts/main.min.js'
+     ]);
+   })
+ );
 });
 self.addEventListener('fetch', function(event) {
-  console.log('👷', 'fetch', event);
-  event.respondWith(fetch(event.request));
+ console.log(event.request.url);
+ event.respondWith(
+   caches.match(event.request).then(function(response) {
+     return response || fetch(event.request);
+   })
+ );
 });
