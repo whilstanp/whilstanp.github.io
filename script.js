@@ -1,7 +1,7 @@
 const divInstall = document.getElementById('installContainer');
 const butInstall = document.getElementById('butInstall');
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js');
+  navigator.serviceWorker.register('/sw.js');
 }
 if (window.location.protocol === 'http:') {
   const requireHTTPS = document.getElementById('requireHTTPS');
