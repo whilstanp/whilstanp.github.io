@@ -10,8 +10,6 @@ self.addEventListener('install', function(event) {
         '/',
         '/src/js/app.js',
         '/index.html',
-        '/manifest.json',
-        '/material.min.js',
         '/script.js',
         '/sw.js'
       ]);
