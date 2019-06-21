@@ -4,8 +4,28 @@
   "description": "HTML5 using integrated Progressive Web Apps",
   "icons": [
     {
+      "src": "/src/images/icons/Apps.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
       "src": "/src/images/icons/app_drawer.png",
       "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/images/icons/Apps2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/images/icons/Apps3.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/images/icons/Apps4.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
