@@ -24,6 +24,11 @@
       "type": "image/png"
     },
     {
+      "src": "/src/images/icons/ap_resize.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
       "src": "/src/images/icons/Apps4.png",
       "sizes": "512x512",
       "type": "image/png"
