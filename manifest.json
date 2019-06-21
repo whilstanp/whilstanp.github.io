@@ -1,7 +1,7 @@
 {
-  "short_name": "Weather",
-  "name": "Weather - Do I need an umbrella?",
-  "description": "Weather forecast information",
+  "short_name": "whilstanp",
+  "name": "whilstanp's hosted project",
+  "description": "HTML5 using integrated Progressive Web Apps",
   "icons": [
     {
       "src": "/src/images/icons/settings.png",
