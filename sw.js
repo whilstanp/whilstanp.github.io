@@ -3,6 +3,12 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
   });
 }
+'use strict';
+var cacheVersion = 1;
+var currentCache = {
+  offline: 'offline-cache' + cacheVersion
+};
+const offlineUrl = 'offline.html';
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('first-app')
@@ -12,11 +18,30 @@ self.addEventListener('install', function(event) {
         '/src/js/app.js',
         '/index.html',
         '/script.js',
-        '/sw.js'
+        '/sw.js',
+        offlineUrl
       ])
     })
   );
   return self.clients.claim();
+});
+this.addEventListener('fetch', event => {
+  if (event.request.mode === 'navigate' || 
+      (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
+        event.respondWith(
+          fetch(event.request.url).catch(error => {
+              // Return the offline page
+              return caches.match(offlineUrl);
+          })
+    );
+  }
+  else{
+        event.respondWith(caches.match(event.request)
+                        .then(function (response) {
+                        return response || fetch(event.request);
+                    })
+            );
+      }
 });
 /*self.addEventListener('fetch', function(event) {
   event.respondWith(
@@ -32,7 +57,7 @@ self.addEventListener('fetch', function(event) {
       return caches.match(event.request);
     })
   );
-});*/
+});
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
@@ -57,4 +82,4 @@ self.addEventListener('fetch', function(event) {
         }
       })
   );
-});
+});*/
