@@ -2158,175 +2158,6 @@ ul, ol {
 
 .mdl-color-text--accent-contrast {
   color: rgb(255,255,255) !important; }
-
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- * -----Dialog
- * -----Snackbar
- * -----Tooltip
- * -----Chip
- *
- * Even though all variables have the `!default` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  IMAGES  ========== */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* DIALOG */
-/* SNACKBAR */
-/* TOOLTIP */
-/* CHIP */
 .mdl-ripple {
   background: rgb(0,0,0);
   border-radius: 50%;
@@ -2336,185 +2167,11 @@ ul, ol {
   pointer-events: none;
   position: absolute;
   top: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   width: 50px;
   overflow: hidden; }
-  .mdl-ripple.is-animating {
-    transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1), opacity 0.6s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1), width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1), opacity 0.6s cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1), width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1), opacity 0.6s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1); }
   .mdl-ripple.is-visible {
     opacity: 0.3; }
 
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- * -----Dialog
- * -----Snackbar
- * -----Tooltip
- * -----Chip
- *
- * Even though all variables have the `!default` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  IMAGES  ========== */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* DIALOG */
-/* SNACKBAR */
-/* TOOLTIP */
-/* CHIP */
 .mdl-animation--default {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 
@@ -2527,174 +2184,6 @@ ul, ol {
 .mdl-animation--fast-out-linear-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }
 
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- * -----Dialog
- * -----Snackbar
- * -----Tooltip
- * -----Chip
- *
- * Even though all variables have the `!default` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  IMAGES  ========== */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* DIALOG */
-/* SNACKBAR */
-/* TOOLTIP */
-/* CHIP */
 .mdl-badge {
   position: relative;
   white-space: nowrap;
@@ -3011,8 +2500,6 @@ input.mdl-button[type="submit"] {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-12px, -12px);
-            transform: translate(-12px, -12px);
     line-height: 24px;
     width: 24px; }
   .mdl-button--fab.mdl-button--mini-fab {
@@ -3056,8 +2543,7 @@ input.mdl-button[type="submit"] {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-12px, -12px);
-            transform: translate(-12px, -12px);
+transform: translate(-12px, -12px);
     line-height: 24px;
     width: 24px; }
   .mdl-button--icon.mdl-button--mini-icon {
@@ -3162,7 +2648,6 @@ input.mdl-button[type="submit"] {
   padding: 16px 16px;
   -webkit-perspective-origin: 165px 56px;
           perspective-origin: 165px 56px;
-  -webkit-transform-origin: 165px 56px;
           transform-origin: 165px 56px;
   box-sizing: border-box; }
   .mdl-card__title.mdl-card--border {
@@ -3181,7 +2666,6 @@ input.mdl-button[type="submit"] {
   font-weight: 300;
   line-height: normal;
   overflow: hidden;
-  -webkit-transform-origin: 149px 48px;
           transform-origin: 149px 48px;
   margin: 0; }
 
@@ -4033,31 +3517,14 @@ input.mdl-button[type="submit"] {
   left: 0;
   overflow: hidden;
   opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  will-change: transform;
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1; }
   .mdl-menu__container.is-visible .mdl-menu__outline {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
     z-index: 999; }
-  .mdl-menu__outline.mdl-menu--bottom-right {
-    -webkit-transform-origin: 100% 0;
-            transform-origin: 100% 0; }
-  .mdl-menu__outline.mdl-menu--top-left {
-    -webkit-transform-origin: 0 100%;
-            transform-origin: 0 100%; }
-  .mdl-menu__outline.mdl-menu--top-right {
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%; }
-
+  .mdl-menu__outline.mdl-menu--bottom-right {}
+  .mdl-menu__outline.mdl-menu--top-left {}
+  .mdl-menu__outline.mdl-menu--top-right {}
 .mdl-menu {
   position: absolute;
   list-style: none;
@@ -4347,23 +3814,14 @@ input.mdl-button[type="submit"] {
   box-sizing: border-box;
   border-right: 1px solid rgb(224,224,224);
   background: rgb(250,250,250);
-  -webkit-transform: translateX(-250px);
-          transform: translateX(-250px);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
   will-change: transform;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
   color: rgb(66,66,66);
   overflow: visible;
   overflow-y: auto;
   z-index: 5; }
-  .mdl-layout__drawer.is-visible {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
+  .mdl-layout__drawer.is-visible {}
     .mdl-layout__drawer.is-visible ~ .mdl-layout__content.mdl-layout__content {
       overflow: hidden; }
   .mdl-layout__drawer > * {
@@ -4405,8 +3863,7 @@ input.mdl-button[type="submit"] {
         color: rgb(0,0,0); }
   @media screen and (min-width: 1025px) {
     .mdl-layout--fixed-drawer > .mdl-layout__drawer {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); } }
+} }
 
 .mdl-layout__drawer-button {
   display: block;
@@ -4862,16 +4319,9 @@ input.mdl-button[type="submit"] {
   cursor: pointer;
   transition-duration: 0.28s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transform: scale(0, 0);
-          transform: scale(0, 0);
   border-radius: 50%;
   background: rgb(63,81,181); }
-  .mdl-radio.is-checked .mdl-radio__inner-circle {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1); }
+  .mdl-radio.is-checked .mdl-radio__inner-circle {}
   fieldset[disabled] .mdl-radio .mdl-radio__inner-circle,
   .mdl-radio.is-disabled .mdl-radio__inner-circle {
     background: rgba(0,0,0, 0.26);
@@ -4962,10 +4412,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       box-sizing: border-box;
       border-radius: 50%;
       background: rgb(63,81,181);
-      border: none;
-      transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1); }
+      border: none;}
     .mdl-slider.is-upgraded::-moz-range-thumb {
       -moz-appearance: none;
       width: 12px;
@@ -4981,9 +4428,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       box-shadow: 0 0 0 10px rgba(63,81,181, 0.26); }
     .mdl-slider.is-upgraded:active::-webkit-slider-thumb {
       background-image: none;
-      background: rgb(63,81,181);
-      -webkit-transform: scale(1.5);
-              transform: scale(1.5); }
+      background: rgb(63,81,181);}
     .mdl-slider.is-upgraded:active::-moz-range-thumb {
       background-image: none;
       background: rgb(63,81,181);
@@ -4995,9 +4440,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       border-radius: 50%;
       background: rgb(63,81,181);
       transform: scale(0.375);
-      transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1); }
+}
     .mdl-slider.is-upgraded:focus:not(:active)::-ms-thumb {
       background: radial-gradient(circle closest-side, rgb(63,81,181) 0%, rgb(63,81,181) 37.5%, rgba(63,81,181, 0.26) 37.5%, rgba(63,81,181, 0.26) 100%);
       transform: scale(1); }
@@ -5020,9 +4463,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       box-shadow: 0 0 0 10px rgba(0,0,0, 0.12);
       background: rgba(0,0,0, 0.12); }
     .mdl-slider.is-upgraded.is-lowest-value:active::-webkit-slider-thumb {
-      border: 1.6px solid rgba(0,0,0, 0.26);
-      -webkit-transform: scale(1.5);
-              transform: scale(1.5); }
+      border: 1.6px solid rgba(0,0,0, 0.26);}
     .mdl-slider.is-upgraded.is-lowest-value:active +
 .mdl-slider__background-flex > .mdl-slider__background-upper {
       left: 9px; }
@@ -5044,8 +4485,6 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
     .mdl-slider.is-upgraded.is-lowest-value:active::-ms-fill-upper {
       margin-left: 9px; }
     .mdl-slider.is-upgraded:disabled:focus::-webkit-slider-thumb, .mdl-slider.is-upgraded:disabled:active::-webkit-slider-thumb, .mdl-slider.is-upgraded:disabled::-webkit-slider-thumb {
-      -webkit-transform: scale(0.667);
-              transform: scale(0.667);
       background: rgba(0,0,0, 0.26); }
     .mdl-slider.is-upgraded:disabled:focus::-moz-range-thumb, .mdl-slider.is-upgraded:disabled:active::-moz-range-thumb, .mdl-slider.is-upgraded:disabled::-moz-range-thumb {
       transform: scale(0.667);
@@ -5059,9 +4498,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       left: 6px; }
     .mdl-slider.is-upgraded.is-lowest-value:disabled:focus::-webkit-slider-thumb, .mdl-slider.is-upgraded.is-lowest-value:disabled:active::-webkit-slider-thumb, .mdl-slider.is-upgraded.is-lowest-value:disabled::-webkit-slider-thumb {
       border: 3px solid rgba(0,0,0, 0.26);
-      background: transparent;
-      -webkit-transform: scale(0.667);
-              transform: scale(0.667); }
+      background: transparent;}
     .mdl-slider.is-upgraded.is-lowest-value:disabled:focus::-moz-range-thumb, .mdl-slider.is-upgraded.is-lowest-value:disabled:active::-moz-range-thumb, .mdl-slider.is-upgraded.is-lowest-value:disabled::-moz-range-thumb {
       border: 3px solid rgba(0,0,0, 0.26);
       background: transparent;
@@ -5115,8 +4552,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   overflow: hidden;
   border: 0;
   padding: 0;
-  -webkit-transform: translate(0, -1px);
-          transform: translate(0, -1px); }
+}
 
 .mdl-slider__background-lower {
   background: rgb(63,81,181);
@@ -5152,13 +4588,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  will-change: transform;
-  -webkit-transform: translate(0, 80px);
-          transform: translate(0, 80px);
-  transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 1, 1);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.25s cubic-bezier(0.4, 0, 1, 1);
-  pointer-events: none; }
+}
   @media (max-width: 479px) {
     .mdl-snackbar {
       width: 100%;
@@ -5169,20 +4599,10 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
     .mdl-snackbar {
       min-width: 288px;
       max-width: 568px;
-      border-radius: 2px;
-      -webkit-transform: translate(-50%, 80px);
-              transform: translate(-50%, 80px); } }
-  .mdl-snackbar--active {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-    pointer-events: auto;
-    transition: -webkit-transform 0.25s cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.25s cubic-bezier(0, 0, 0.2, 1); }
+      border-radius: 2px;} }
+  .mdl-snackbar--active {    pointer-events: auto;}
     @media (min-width: 480px) {
-      .mdl-snackbar--active {
-        -webkit-transform: translate(-50%, 0);
-                transform: translate(-50%, 0); } }
+      .mdl-snackbar--active {} }
   .mdl-snackbar__text {
     padding: 14px 12px 14px 24px;
     vertical-align: middle;
@@ -5229,14 +4649,10 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
             animation: mdl-spinner__container-rotate 1568.23529412ms linear infinite; }
 
 @-webkit-keyframes mdl-spinner__container-rotate {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+  to {} }
 
 @keyframes mdl-spinner__container-rotate {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+  to {} }
 
 .mdl-spinner__layer {
   position: absolute;
@@ -5277,56 +4693,24 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
             animation: mdl-spinner__fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, mdl-spinner__layer-4-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
 
 @-webkit-keyframes mdl-spinner__fill-unfill-rotate {
-  12.5% {
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg); }
-  25% {
-    -webkit-transform: rotate(270deg);
-            transform: rotate(270deg); }
-  37.5% {
-    -webkit-transform: rotate(405deg);
-            transform: rotate(405deg); }
-  50% {
-    -webkit-transform: rotate(540deg);
-            transform: rotate(540deg); }
-  62.5% {
-    -webkit-transform: rotate(675deg);
-            transform: rotate(675deg); }
-  75% {
-    -webkit-transform: rotate(810deg);
-            transform: rotate(810deg); }
-  87.5% {
-    -webkit-transform: rotate(945deg);
-            transform: rotate(945deg); }
-  to {
-    -webkit-transform: rotate(1080deg);
-            transform: rotate(1080deg); } }
+  12.5% {}
+  25% {}
+  37.5% {}
+  50% {}
+  62.5% {}
+  75% {}
+  87.5% {}
+  to {} }
 
 @keyframes mdl-spinner__fill-unfill-rotate {
-  12.5% {
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg); }
-  25% {
-    -webkit-transform: rotate(270deg);
-            transform: rotate(270deg); }
-  37.5% {
-    -webkit-transform: rotate(405deg);
-            transform: rotate(405deg); }
-  50% {
-    -webkit-transform: rotate(540deg);
-            transform: rotate(540deg); }
-  62.5% {
-    -webkit-transform: rotate(675deg);
-            transform: rotate(675deg); }
-  75% {
-    -webkit-transform: rotate(810deg);
-            transform: rotate(810deg); }
-  87.5% {
-    -webkit-transform: rotate(945deg);
-            transform: rotate(945deg); }
-  to {
-    -webkit-transform: rotate(1080deg);
-            transform: rotate(1080deg); } }
+  12.5% {}
+  25% {}
+  37.5% {}
+  50% {}
+  62.5% {}
+  75% {}
+  87.5% {}
+  to {} }
 @-webkit-keyframes mdl-spinner__layer-1-fade-in-out {
   from {
     opacity: 0.99; }
@@ -5468,64 +4852,36 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   bottom: 0;
   left: 0; }
   .mdl-spinner__left .mdl-spinner__circle {
-    border-right-color: transparent !important;
-    -webkit-transform: rotate(129deg);
-            transform: rotate(129deg); }
+    border-right-color: transparent !important;}
     .mdl-spinner.is-active .mdl-spinner__left .mdl-spinner__circle {
       -webkit-animation: mdl-spinner__left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
               animation: mdl-spinner__left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
   .mdl-spinner__right .mdl-spinner__circle {
     left: -100%;
-    border-left-color: transparent !important;
-    -webkit-transform: rotate(-129deg);
-            transform: rotate(-129deg); }
+    border-left-color: transparent !important;}
     .mdl-spinner.is-active .mdl-spinner__right .mdl-spinner__circle {
       -webkit-animation: mdl-spinner__right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
               animation: mdl-spinner__right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
 
 @-webkit-keyframes mdl-spinner__left-spin {
-  from {
-    -webkit-transform: rotate(130deg);
-            transform: rotate(130deg); }
-  50% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg); }
-  to {
-    -webkit-transform: rotate(130deg);
-            transform: rotate(130deg); } }
+  from {}
+  50% {}
+  to {} }
 
 @keyframes mdl-spinner__left-spin {
-  from {
-    -webkit-transform: rotate(130deg);
-            transform: rotate(130deg); }
-  50% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg); }
-  to {
-    -webkit-transform: rotate(130deg);
-            transform: rotate(130deg); } }
+  from {}
+  50% {}
+  to {} }
 
 @-webkit-keyframes mdl-spinner__right-spin {
-  from {
-    -webkit-transform: rotate(-130deg);
-            transform: rotate(-130deg); }
-  50% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg); }
-  to {
-    -webkit-transform: rotate(-130deg);
-            transform: rotate(-130deg); } }
+  from {}
+  50% {}
+  to {} }
 
 @keyframes mdl-spinner__right-spin {
-  from {
-    -webkit-transform: rotate(-130deg);
-            transform: rotate(-130deg); }
-  50% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg); }
-  to {
-    -webkit-transform: rotate(-130deg);
-            transform: rotate(-130deg); } }
+  from {}
+  50% {}
+  to {} }
 .mdl-switch {
   position: relative;
   z-index: 1;
@@ -5602,8 +4958,6 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-4px, -4px);
-          transform: translate(-4px, -4px);
   display: inline-block;
   box-sizing: border-box;
   width: 8px;
@@ -5882,12 +5236,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   .mdl-textfield__expandable-holder .mdl-textfield__label:after {
     bottom: 0; }
 
-.mdl-tooltip {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
-  z-index: 999;
+.mdl-tooltip {  z-index: 999;
   background: rgba(97,97,97, 0.9);
   border-radius: 2px;
   color: rgb(255,255,255);
@@ -5912,31 +5261,15 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   padding: 16px; }
 
 @-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 0; }
-  50% {
-    -webkit-transform: scale(0.99);
-            transform: scale(0.99); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
+  0% {    opacity: 0; }
+  50% {}
+  100% {    opacity: 1;
     visibility: visible; } }
 
 @keyframes pulse {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 0; }
-  50% {
-    -webkit-transform: scale(0.99);
-            transform: scale(0.99); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
+  0% {    opacity: 0; }
+  50% {}
+  100% {    opacity: 1;
     visibility: visible; } }
 
 .mdl-shadow--2dp {
