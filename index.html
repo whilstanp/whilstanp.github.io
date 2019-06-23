@@ -321,16 +321,16 @@ img.article-image {
   }
   function handleStart() {
 	    console.log("touchstart dimulai");
-	    var x = document.getElementsByTagName("span");
-	    x.style.color = "#FF6347";
+	    /*var x = document.getElementsByTagName("span");
+	    x.style.color = "#FF6347";*/
   }
   function handleEnd() {
 	    console.log("touchend dimulai");
   }
   function handleMove() {
 	    console.log("touchmove dimulai");
-	    var y = document.getElementsByTagName("span");
-	    y.style.color = "#FF4500";
+	    /*var y = document.getElementsByTagName("span");
+	    y.style.color = "#FF4500";*/
   }
   </script>
   <script>
@@ -338,7 +338,8 @@ img.article-image {
     document.querySelector("span").addEventListener('touchend',f);
     document.querySelector("span").addEventListener('touchmove',f);
     function f(ev) {
-        console.log( ev.touches, ev.type );
+        console.log(ev.touches, ev.type);
+	document.getElementsByTagName("span").style.color = "#FF6347";
     }
   </script>
 </body>
