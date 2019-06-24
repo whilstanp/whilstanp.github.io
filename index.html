@@ -19,6 +19,18 @@
   background-image: url(/bnr_11.jpg);
   background-size: 400px 200px;
   }
+  @media (min-height: 0px) and (max-height: 299px) {
+    #logo {
+        width: 300;
+	height: 150;
+    }
+  }
+  @media (min-height: 300px) and (min-width: 800px) {
+    #logo {
+        width: 600;
+	height: 300;
+    }
+  }
   .portfolio-header {
   background-image: url(/maxresdefault.jpg);
   background-size: 200px 75px;
@@ -163,7 +175,6 @@ img.article-image {
 <link rel="manifest" href="/manifest.json">
 <script src="/script.js"></script>
 <script src="/src/js/app.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -185,6 +196,7 @@ img.article-image {
         <div class="mdl-grid portfolio-max-width">
             <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
                 <div class="mdl-card__media mdl-color-text--grey-50">
+		    <img id="logo" src="http://www.petra.ac.id/images/logo.jpg"></img>
                     <h3>On the road again</h3>
                 </div>
                 <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
