@@ -12,6 +12,8 @@ self.addEventListener('install', function(event) {
         '/src/js/app.js',
         '/index.html',
         '/script.js',
+        '/manifest.json',
+        '/offline.html',
         '/sw.js'
       ])
     })
@@ -26,7 +28,30 @@ self.addEventListener('fetch', function(event) {
       })
   );
 });
-self.addEventListener('fetch', function(event) {
+self.addEventListener("fetch", function(event) {
+  event.respondWith(
+    fetch(event.request).catch(function(error) {
+      console.log(
+        "[Service Worker] Network request Failed. Serving content from cache: " +
+          error
+      );
+      return caches
+        .open(
+          "sw-precache-v3-sw-precache-webpack-plugin-https://silent-things.surge.sh"
+        )
+        .then(function(cache) {
+          return cache.match(event.request).then(function(matching) {
+            var report =
+              !matching || matching.status == 404
+                ? Promise.reject("no-match")
+                : matching;
+            return report;
+          });
+        });
+    })
+  );
+});
+/*self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request).catch(function() {
       return caches.match(event.request);
@@ -57,4 +82,4 @@ self.addEventListener('fetch', function(event) {
         }
       })
   );
-});
+});*/
