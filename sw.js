@@ -30,13 +30,14 @@ self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then((cachedResponse)=>{
         if(cachedResponse){
-            console.log("Found in cache!")
+            console.log("Found in cache!");
             return cachedResponse;}
-        return fetch(e.request).the((fetchResponse)=>fetchResponse)
+        return fetch(e.request).then((fetchResponse)=>fetchResponse)
         .catch((ezz)=>{
             const isHTMLPage = e.request.method == "GET" && e.request.headers.get("accept").includes("text/html");
             if(isHTMLPage) return caches.match("/offline.html");
         });
+      });
 });
 
 /*if ('serviceWorker' in navigator) {
