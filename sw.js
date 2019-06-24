@@ -20,7 +20,7 @@ self.addEventListener('install', function(event) {
   );
   return self.clients.claim();
 });
-self.addEventListener('fetch', function(event) {
+/*self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(res) {
@@ -34,7 +34,7 @@ self.addEventListener('fetch', function(event) {
       return caches.match(event.request);
     })
   );
-});
+});*/
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
