@@ -12,8 +12,7 @@ self.addEventListener('install', function(event) {
         '/src/js/app.js',
         '/index.html',
         '/script.js',
-        '/sw.js',
-        '/offline.html'
+        '/sw.js'
       ])
     })
   );
@@ -34,7 +33,7 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
-/*self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
@@ -58,4 +57,4 @@ self.addEventListener('fetch', function(event) {
         }
       })
   );
-});*/
+});
