@@ -27,15 +27,15 @@ self.addEventListener('install', function(event) {
         return res;
       })
   );
-});
+});*/
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request).catch(function() {
       return caches.match(event.request);
     })
   );
-});*/
-self.addEventListener('fetch', function(event) {
+});
+/*self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
@@ -59,4 +59,4 @@ self.addEventListener('fetch', function(event) {
         }
       })
   );
-});
+});*/
