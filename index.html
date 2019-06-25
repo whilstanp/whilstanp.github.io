@@ -242,7 +242,7 @@ img.article-image {
     </main>
 </div>
 <script>
-function startup() {
+/*function startup() {
       var el = document.getElementsById("tx"); 
 	    el.addEventListener("touchstart", handleStart, false);
 	    el.addEventListener("touchend", handleEnd, false);
@@ -257,15 +257,23 @@ function startup() {
   }
   function handleMove() {
 	    console.log("touchmove dimulai");
-}
+}*/
 </script>
 <script>
-    /*document.querySelector("span").addEventListener('touchstart', f);
-    document.querySelector("span").addEventListener('touchend',f);
-    document.querySelector("span").addEventListener('touchmove',f);
+    var spans = document.getElementsByTagName('span');
+    document.querySelector('span').addEventListener('touchstart', f);
+    document.querySelector('span').addEventListener('touchend',f);
+    document.querySelector('span').addEventListener('touchmove',f);
+    for (var i = 0; i < spans.length; i++) {
+            var span = spans[i];
+            if (span.textContent == 'PWA Project: Simple autobio')
+                span.style.color = 'green';
+            if (span.textContent == 'and favorable hall-of-fame')
+                span.style.color = 'red';
+    }
     function f(ev) {
         console.log(ev.touches, ev.type);
-    }*/
+    }
 </script>
 </body>
 </html>
