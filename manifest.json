@@ -1,7 +1,7 @@
 {
-  "short_name": "whilstanp",
-  "name": "whilstanp's hosted project",
-  "description": "HTML5 using integrated Progressive Web Apps",
+  "short_name": "krosm",
+  "name": "kodepos rtrw openstreetmap",
+  "description": "basis penunjang html berupa link ke aplikasi (chrome)",
   "icons": [
     {
       "src": "/src/images/icons/Apps_mini.png",
