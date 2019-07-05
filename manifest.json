@@ -4,7 +4,7 @@
   "description": "basis penunjang html berupa link ke aplikasi (chrome)",
   "icons": [
     {
-      "src": "/src/images/icons/Apps_mini.png",
+      "src": "/src/images/icons/postbox-windows4.png",
       "sizes": "48x48",
       "type": "image/png"
     },
