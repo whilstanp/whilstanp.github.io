@@ -14,7 +14,7 @@
       "type": "image/png"
     },
     {
-      "src": "/src/images/icons/Apps.png",
+      "src": "/src/images/icons/mailbox.png",
       "sizes": "128x128",
       "type": "image/png"
     },
@@ -29,7 +29,7 @@
       "type": "image/png"
     },
     {
-      "src": "/src/images/icons/Apps3.png",
+      "src": "/src/images/icons/mailbox2.png",
       "sizes": "256x256",
       "type": "image/png"
     },
@@ -39,7 +39,7 @@
       "type": "image/png"
     },
     {
-      "src": "/src/images/icons/Apps4.png",
+      "src": "/src/images/icons/mailbox3.png",
       "sizes": "512x512",
       "type": "image/png"
     }
