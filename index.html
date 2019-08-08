@@ -20,7 +20,7 @@
     <script type="text/javascript">
         function init() {
             var mapOSM = L.map('map').setView([18.52, 73.95], 12);
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '© <a href="openstreetmap.org>OpenStreetMap</a> contributors',
                         maxZoom: 14 }).addTo(mapOSM);
             L.marker([18.25, 73.95], {
@@ -35,7 +35,7 @@
 <body onload="javascript:init();">
     <div>Icons made by <a href="https://www.freepik.com/?__hstc=57440181.54b226a93aae3622a01a3a1bda43f869.1562300598282.1562300598282.1562300598282.1&__hssc=57440181.1.1562300598282&__hsfp=1979463607" title="Freepik">Freepik</a> from
         <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        <a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     <div id="map"></div>
 </body>
 </html>
