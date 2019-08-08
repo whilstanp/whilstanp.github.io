@@ -1,0 +1,3 @@
+https://github.com/openstreetmap/iD
+https://blogs.mulesoft.com/dev/api-dev/apis-versus-web-services/
+https://www.e-education.psu.edu/geog585/node/706
