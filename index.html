@@ -16,6 +16,30 @@
             width: 550px;
             height: 300px;
         }
+        @media (min-width: 360px) and (max-width: 719px) {
+            #map {
+                width: 300px;
+                height: 600px;
+            }
+        }
+        @media only screen and (min-width: 720px) {
+            #map {
+                width: 720px;
+                height: 1280px;
+            }
+        }
+        @media (min-height: 480px) and (max-height: 719px) {
+            #map {
+                width: 848px;
+                height: 480px;
+            }
+        }
+        @media only screen and (min-height: 720px) {
+            #map {
+                width: 1280px;
+                height: 720px;
+            }
+        }
     </style>
     <script type="text/javascript">
         function init() {
@@ -33,9 +57,9 @@
     <script src="/src/js/app.js"></script>
 </head>
 <body onload="javascript:init();">
-    <div>Icons made by <a href="https://www.freepik.com/?__hstc=57440181.54b226a93aae3622a01a3a1bda43f869.1562300598282.1562300598282.1562300598282.1&__hssc=57440181.1.1562300598282&__hsfp=1979463607" title="Freepik">Freepik</a> from
+    <!--<div>Icons made by <a href="https://www.freepik.com/?__hstc=57440181.54b226a93aae3622a01a3a1bda43f869.1562300598282.1562300598282.1562300598282.1&__hssc=57440181.1.1562300598282&__hsfp=1979463607" title="Freepik">Freepik</a> from
         <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-        <a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        <a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
     <div id="map"></div>
 </body>
 </html>
