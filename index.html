@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.js" charset="utf-8"></script><-->
     <title>Progressive Web Apps</title>
     <style>
         #map {
@@ -50,18 +50,31 @@
         }
     </style>
     <script type="text/javascript">
-        var lc = L.control.locate().addTo(map);
+        /*var lc = L.control.locate().addTo(map);
         lc.start();
         map.addControl(L.control.locate({
         locateOptions: {
                enableHighAccuracy: true
-        }}));
+        }}));*/
         function init() {
-            var mapOSM = L.map('map').setView(lc, 12);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                        maxZoom: 14 }).addTo(mapOSM);
-            L.marker(lc).addTo(mapOSM).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
+            //var mapOSM = L.map('map').setView(lc, 12);
+            var mapOSM = L.map('map').fitWorld();
+            L.tileLayer('https://api.tiles.mapbox.com/v4/MapID/997/256/{z}/{x}/{y}.png?access_token={accessToken}', {
+                        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', 
+                        <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, 
+                        Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18 }).addTo(mapOSM);
+            map.locate({setView: true, maxZoom: 18});
+            function onLocationFound(e) {
+	            var radius = e.accuracy;
+	            L.marker(e.latlng).addTo(mapOSM).bindPopup("You are within " + radius + " meters from this point").openPopup();
+                L.circle(e.latlng, radius).addTo(mapOSM);}
+            map.on('locationfound', onLocationFound);
+            function onLocationError(e) {
+	            alert(e.message);
+            }
+            map.on('locationerror', onLocationError);
+            //L.marker(lc).addTo(mapOSM).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
         }
     </script>
     <link rel="manifest" href="/manifest.json">
