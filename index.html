@@ -52,32 +52,6 @@
 	    background: #AFEEEE no-repeat;
 	}
     </style>
-    <script type="text/javascript">
-        /*var lc = L.control.locate().addTo(map);
-        lc.start();
-        map.addControl(L.control.locate({
-        locateOptions: {
-               enableHighAccuracy: true
-        }}));*/
-        function init() {
-            /*var mapOSM = L.map('map').setView(lc, 12);
-            var mapOSM = L.map('map').fitWorld();
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z},{x},{y}.png', {
-                        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18 }).addTo(mapOSM);
-            map.locate({setView: true, maxZoom: 18});
-            function onLocationFound(e) {
-	            var radius = e.accuracy;
-	            L.marker(e.latlng).addTo(mapOSM).bindPopup("You are within " + radius + " meters from this point").openPopup();
-                L.circle(e.latlng, radius).addTo(mapOSM);}
-            map.on('locationfound', onLocationFound);
-            function onLocationError(e) {
-	            alert(e.message);
-            }
-            map.on('locationerror', onLocationError);
-            L.marker(lc).addTo(mapOSM).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();*/
-        }
-    </script>
     <link rel="manifest" href="/manifest.json">
     <script src="/script.js"></script>
     <script src="/src/js/app.js"></script>
@@ -94,6 +68,8 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">krosm menu</span>
         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" id="latitude">latitude: &deg;</a>
+            <a class="mdl-navigation__link" id="latitude">longitude: &deg;</a>
             <a class="mdl-navigation__link" href="">directions</a>
             <a class="mdl-navigation__link" href="">pinpoint slideshows</a>
 	    <a class="mdl-navigation__link" href="">share or embed map</a>
@@ -104,17 +80,11 @@
         <div>
             <div id="map"></div>
         </div>
-	<p>
-      		latitude: <span id="latitude"></span>&deg;<br />
-      		longitude: <span id="longitude"></span>&deg;
-    	</p>
 	<script>
 	if ('geolocation' in navigator) {
-		console.log('geolocation available');
 		navigator.geolocation.getCurrentPosition(position => {
 			lat = position.coords.latitude;
 			lon = position.coords.longitude;
-			console.log(lat, lon);
 			document.getElementById('latitude').textContent = lat;
 			document.getElementById('longitude').textContent = lon;
 			const mymap = L.map('map').setView([lat, lon], 15);
@@ -122,10 +92,8 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
-			const marker = L.marker([lat, lon]).addTo(mymap);});
-      		} else {
-        	console.log('geolocation not available');
-      		}
+			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup("current location").openPopup();});
+      		} else {}
 	</script>
     </div>
     <footer id="ftr" class="mdl-mega-footer">
