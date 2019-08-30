@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.js" charset="utf-8"></script>
     <title>Progressive Web Apps</title>
     <style>
         #map {
@@ -48,19 +50,18 @@
         }
     </style>
     <script type="text/javascript">
-        var x = document.getElementById("map");
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";}
-        }
+        var lc = L.control.locate().addTo(map);
+        lc.start();
+        map.addControl(L.control.locate({
+        locateOptions: {
+               enableHighAccuracy: true
+        }}));
         function init() {
-            var mapOSM = L.map('map').setView([position.coords.latitude, position.coords.longitude], 12);
+            var mapOSM = L.map('map').setView(lc, 12);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 14 }).addTo(mapOSM);
-            L.marker([18.25, 73.95]).addTo(mapOSM).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
+            L.marker(lc).addTo(mapOSM).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
         }
     </script>
     <link rel="manifest" href="/manifest.json">
