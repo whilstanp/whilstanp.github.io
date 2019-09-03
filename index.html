@@ -97,14 +97,8 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
-			var lc = L.control.locate().addTo(mymap);
-			lc.start();
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
-			lc.addControl(L.control.locate({
-       				locateOptions: {
-               				enableHighAccuracy: true
-			}}));
       		} else {}
 	</script>
     </div>
