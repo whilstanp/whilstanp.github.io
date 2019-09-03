@@ -95,8 +95,14 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
-			const popup = L.responsivePopup().setContent('current location');
+			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
+			mymap.on('popupopen',function(e) {
+  				e.popup.highlight = L.circleMarker(e.popup.getLatLng(), { radius: 15 , opacity: 0, fillColor: "#000000", fillOpacity: .3 }).addTo(map);
+			});   	
+			mymap.on('popupclose',function(e) {
+  				mymap.removeLayer(e.popup.highlight);
+			});
       		} else {}
 	</script>
     </div>
