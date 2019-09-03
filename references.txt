@@ -1,3 +1,4 @@
-https://www.mapbox.com/
+https://github.com/mapbox/mapbox-sdk-js
 https://www.domoritz.de/leaflet-locatecontrol/
 https://leafletjs.com/plugins.html#search--popups
+https://docs.mapbox.com/mapbox-gl-js/plugins/#mapbox-gl-geocoder
