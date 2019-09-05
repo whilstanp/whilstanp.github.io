@@ -100,8 +100,34 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
+			var geocoder = L.Control.Geocoder.nominatim();
+      			if (URLSearchParams && location.search) {
+        			var params = new URLSearchParams(location.search);
+        			var geocoderString = params.get('geocoder');
+        			if (geocoderString && L.Control.Geocoder[geocoderString]) {
+          				console.log('Using geocoder', geocoderString);
+          				geocoder = L.Control.Geocoder[geocoderString]();
+        			} else if (geocoderString) {
+          			console.warn('Unsupported geocoder', geocoderString);
+        			}
+      			}
+      			var control = L.Control.geocoder({
+        			geocoder: geocoder
+      			}).addTo(mymap);
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
+			mymap.on('click', function(e) {
+        		geocoder.reverse(e.latlng, mymap.options.crs.scale(mymap.getZoom()), function(results) {
+          		var r = results[0];
+          		if (r) {
+           		 	if (marker) {
+              				marker.setLatLng(r.center).setPopupContent(r.html || r.name).openPopup();
+            			} else {
+              				marker = L.marker(r.center).bindPopup(r.name).addTo(mymap).openPopup();
+					}
+          			}
+        		});
+      		});
       		} else {}
 	</script>
     </div>
