@@ -22,12 +22,6 @@
             width: 400px;
             height: 524px;
         }
-        /*@media only screen and (min-width: 600px) and (min-height: 480px){
-            #map {
-                width: 848px;
-                height: 480px;
-            }
-        }*/
         @media only screen and (min-width: 800px) and (min-height: 720px){
             #map {
                 width: 1280px;
@@ -98,7 +92,6 @@
 			const tileUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
-			//var tiles = L.esri.basemapLayer("Streets").addTo(mymap);
     			var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
     			var results = L.layerGroup().addTo(mymap);
     			searchControl.on("results", function(data) {
