@@ -100,7 +100,7 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
-			var geocoder = L.Control.Geocoder.nominatim();
+			var geocoder = L.Control.Geocoder.Nominatim();
       			if (URLSearchParams && location.search) {
         			var params = new URLSearchParams(location.search);
         			var geocoderString = params.get('geocoder');
