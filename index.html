@@ -102,12 +102,12 @@
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
 			var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
 			var results = L.layerGroup.addTo(mymap);
-			searchControl.on('results', function(data){
+			/*searchControl.on('results', function(data){
 				results.clearLayers();
 				for(var i=data.results.length-1;i>=0;i--){
 					results.addLayer(L.marker(data.results[i].latlng));
 				}
-			}
+			}*/
       		} else {}
 	</script>
     </div>
