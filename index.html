@@ -96,8 +96,8 @@
 			document.getElementById('latitude').textContent = lat;
 			document.getElementById('longitude').textContent = lon;
 			const mymap = L.map('map').setView([lat, lon], 15);
-			const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+			const attribution = '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+			const tileUrl = 'https://api.mapbox.com/styles/v1/mapbox/emerald-v8/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2hpbHN0YW5wIiwiYSI6ImNrMDY3Y3hxbTNrcHQzY3AwNHViaWNmNGkifQ.V-blude2o-omvwnr7b0UsQ';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
