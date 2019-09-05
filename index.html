@@ -106,7 +106,7 @@
 			}).addTo(mymap);
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
-			mbgl.addControl(new MapboxGeocoder({
+			mymap.addControl(new MapboxGeocoder({
 				accessToken: mbgl.accessToken,
 				mapboxgl: mbgl
 			}));
