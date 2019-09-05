@@ -102,7 +102,7 @@
 			tiles.addTo(mymap);
 			var mbgl = L.mapboxGL({
 				style: 'mapbox://styles/mapbox/streets-v11',
-				accessToken: 'pk.eyJ1Ijoid2hpbHN0YW5wIiwiYSI6ImNrMDY3Y3hxbTNrcHQzY3AwNHViaWNmNGkifQ.V-blude2o-omvwnr7b0UsQ';
+				accessToken: 'pk.eyJ1Ijoid2hpbHN0YW5wIiwiYSI6ImNrMDY3Y3hxbTNrcHQzY3AwNHViaWNmNGkifQ.V-blude2o-omvwnr7b0UsQ'
 			}).addTo(mymap);
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
