@@ -100,16 +100,17 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
+			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
+			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
 			var mbgl = L.mapboxGL({
 				style: 'mapbox://styles/mapbox/streets-v11',
 				accessToken: 'pk.eyJ1Ijoid2hpbHN0YW5wIiwiYSI6ImNrMDY3Y3hxbTNrcHQzY3AwNHViaWNmNGkifQ.V-blude2o-omvwnr7b0UsQ'
 			}).addTo(mymap);
-			mbgl.addControl(new MapboxGeocoder({
+			var mapboxMap = mbgl.getMapboxMap();
+			mapboxMap.addControl(new MapboxGeocoder({
 				accessToken: mbgl.accessToken,
 				mapboxgl: mbgl
 			}));
-			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
-			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
       		} else {}
 	</script>
     </div>
