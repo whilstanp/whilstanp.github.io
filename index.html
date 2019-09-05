@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/esri-leaflet@2.0.8"></script>
-    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.4/dist/esri-leaflet-geocoder.css">
-    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.4"></script>
     <script src="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.rtl.css" />
@@ -100,14 +97,6 @@
 			tiles.addTo(mymap);
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
-			var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
-			var results = L.layerGroup.addTo(mymap);
-			/*searchControl.on('results', function(data){
-				results.clearLayers();
-				for(var i=data.results.length-1;i>=0;i--){
-					results.addLayer(L.marker(data.results[i].latlng));
-				}
-			}*/
       		} else {}
 	</script>
     </div>
