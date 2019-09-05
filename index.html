@@ -105,7 +105,7 @@
 			var mbgl = L.mapboxGL({
 				style: 'mapbox://styles/mapbox/streets-v11',
 				accessToken: 'pk.eyJ1Ijoid2hpbHN0YW5wIiwiYSI6ImNrMDY3Y3hxbTNrcHQzY3AwNHViaWNmNGkifQ.V-blude2o-omvwnr7b0UsQ'
-			}).addTo(mymap);
+			});
 			var mapboxMap = mbgl.getMapboxMap();
 			mapboxMap.addControl(new MapboxGeocoder({
 				accessToken: mbgl.accessToken,
