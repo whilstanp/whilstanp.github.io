@@ -5,3 +5,4 @@ https://docs.mapbox.com/mapbox-gl-js/plugins/#mapbox-gl-geocoder
 https://docs.mapbox.com/help/how-mapbox-works/geocoding/
 https://github.com/mapbox/mapbox-gl-leaflet/
 https://github.com/perliedman/leaflet-control-geocoder
+https://github.com/Esri/esri-leaflet-geocoder
