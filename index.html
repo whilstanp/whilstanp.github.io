@@ -100,16 +100,18 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
+			var mbgl = L.mapboxGL({
+				style: 'mapbox://styles/mapbox/streets-v11',
+				accessToken: 'no-token'
+			}).addTo(mymap);
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
+			//mapboxgl.accessToken = 'pk.eyJ1Ijoid2hpbHN0YW5wIiwiYSI6ImNrMDY3Y3hxbTNrcHQzY3AwNHViaWNmNGkifQ.V-blude2o-omvwnr7b0UsQ';
+			mymap.addControl(new MapboxGeocoder({
+				accessToken: mbgl.accessToken,
+				mapboxgl: mbgl
+			}));
       		} else {}
-	</script>
-	<script>
-	mapboxgl.accessToken = 'pk.eyJ1Ijoid2hpbHN0YW5wIiwiYSI6ImNrMDY3Y3hxbTNrcHQzY3AwNHViaWNmNGkifQ.V-blude2o-omvwnr7b0UsQ';
-	map.addControl(new MapboxGeocoder({
-	accessToken: mapboxgl.accessToken,
-	mapboxgl: mapboxgl
-	}));
 	</script>
     </div>
     <footer id="ftr" class="mdl-mega-footer">
