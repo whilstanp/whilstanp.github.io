@@ -94,12 +94,26 @@
 			tiles.addTo(mymap);
     			var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
     			var results = L.layerGroup().addTo(mymap);
+			var geocodeService = L.esri.Geocoding.geocodeService();
     			searchControl.on("results", function(data) {
         			results.clearLayers();
         			for (var i = data.results.length - 1; i >= 0; i--) {
-            				results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n'));
+            				//results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n'));
 					// + data.results[i].properties.Descr
-        			}
+					geocodeService.reverse().latlng(data.results[i].latlng).run(function(error, result) {
+    						L.marker(data.results[i].latlng).addTo(mymap).bindPopup(data.results[i].properties.Match_addr).openPopup();
+  						});
+					});
+					var result = convertToAddress([lat, lon]);
+					function convertToAddress([lat,lon])
+					{
+      						var defObject = $.Deferred();
+      						geocodeService.reverse().latlng([lat, lon]).run(function(error, result) {
+          						defObject.resolve(result.address.Match_addr);
+      						})
+        					return defObject.promise();
+						}
+        				}
     			});
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
