@@ -102,8 +102,7 @@
 					// + data.results[i].properties.Descr
 					geocodeService.reverse().latlng(data.results[i].latlng).run(function(error, result) {
     						L.marker(data.results[i].latlng).addTo(mymap).bindPopup(data.results[i].properties.Match_addr).openPopup();
-  						});
-					});
+  					});
 					var result = convertToAddress([lat, lon]);
 					function convertToAddress([lat,lon])
 					{
