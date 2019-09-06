@@ -97,10 +97,8 @@
     			searchControl.on("results", function(data) {
         			results.clearLayers();
         			for (var i = data.results.length - 1; i >= 0; i--) {
-            				results.addLayer(L.marker(data.results[i].latlng));
+            				results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n' + data.results[i].properties.Descr));
         			}
-				var popup2 = L.repsonsivePopup({autoPanPadding:[10,10]}).setContent(results);
-				var marker2 = L.marker(results).addTo(mymap).bindPopup(popup2).openPopup();
     			});
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
 			const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();});
