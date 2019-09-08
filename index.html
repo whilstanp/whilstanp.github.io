@@ -99,7 +99,7 @@
                 		results.clearLayers();
                 		for (var i = data.results.length - 1; i >= 0; i--) {
                     			//results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n'));
-                    			results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n' + data.results[i].properties.Match_addr_street + '\n' + data.results[i].properties.Match_addr_city + '\n' + data.results[i].properties.Match_addr_postcode));
+                    			results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n' + data.results[i].properties.Match_street + '\n' + data.results[i].properties.Match_city + '\n' + data.results[i].properties.Match_postcode));
                 		}
             		});
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
