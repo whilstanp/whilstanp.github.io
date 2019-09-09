@@ -96,15 +96,12 @@
 					console.log(data.results[i]);
                 		}
             		});
-			//const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
-                	const popup = L.responsivePopup({
-                    		autoPanPadding: [10, 10]
-                	});
-                	//const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup());
-                	const marker = L.marker([lat, lon]).addTo(mymap);
+			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
+                	const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup();
+                	/*const marker = L.marker([lat, lon]).addTo(mymap);
             		var gps = L.layerGroup().addTo(mymap); 
 			popup.setContent('GPS: ' + '\n' + gps.results.properties.LongLabel); 
-			marker.bindPopup(popup).openPopup(); });
+			marker.bindPopup(popup).openPopup(); });*/
       		} else {}
 	</script>
     </div>
