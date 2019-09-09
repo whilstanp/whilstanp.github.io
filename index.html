@@ -92,7 +92,7 @@
     			searchControl.on("results", function(data) {
                 		results.clearLayers();
                 		for (var i = data.results.length - 1; i >= 0; i--) {
-                    			results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n'));
+                    			results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.LongLabel + '\n' + data.results[i].properties.Postal));
 					console.log(data.results[i]);
                 		}
             		});
