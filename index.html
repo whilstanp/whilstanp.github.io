@@ -100,6 +100,7 @@
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] });
 			//const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup());
 			const marker = L.marker([lat, lon]).addTo(mymap));
+			popup.setContent('current location');
 			marker.bindPopup(popup).openPopup();
       		} else {}
 	</script>
