@@ -22,13 +22,13 @@
             width: 400px;
             height: 524px;
         }
-        @media only screen and (min-width: 800px) and (min-height: 720px){
+        @media only screen and (min-width: 599px) and (max-width: 899px){
             #map {
                 width: 1280px;
                 height: 720px;
             }
         }
-        @media only screen and (min-width: 1000px) and (min-height: 900px){
+        @media only screen and (min-width: 900px){
             #map {
                 width: 1600px;
                 height: 900px;
@@ -99,6 +99,7 @@
                 		results.clearLayers();
                 		for (var i = data.results.length - 1; i >= 0; i--) {
                     			results.addLayer(L.marker(data.results[i].latlng).bindPopup(data.results[i].properties.Match_addr + '\n'));
+					console.log(results);
                 		}
             		});
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
