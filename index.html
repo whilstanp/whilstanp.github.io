@@ -104,7 +104,7 @@
                 	const marker = L.marker(([lat, lon]).addTo(mymap));
             		var gps = L.layerGroup().addTo(mymap); 
 			popup.setContent('GPS: ' + '\n' + gps.results.properties.LongLabel); 
-			marker.bindPopup(popup).openPopup() }; );
+			marker.bindPopup(popup).openPopup(); });
       		} else {}
 	</script>
     </div>
