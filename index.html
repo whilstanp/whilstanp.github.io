@@ -70,7 +70,7 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">&#128236; krosm menu</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" onclick="redir()" href="#">external query search</a>
+            <a class="mdl-navigation__link" onclick="redir()">external query search</a>
             <a class="mdl-navigation__link">pinpoint slideshows</a>
 	    <a class="mdl-navigation__link">share or embed map</a>
         </nav>
@@ -130,6 +130,11 @@
 			x.style.display = "block";
   		}
 	}
+	</script>
+	<script>
+  	$(document).ready(function() {
+    		$('.mdl-navigation__link-drawer').click(function(){$('.mdl-layout__drawer').toggleClass('is-visible');});
+  	});
 	</script>
 	<script>
 	if ('geolocation' in navigator) {
