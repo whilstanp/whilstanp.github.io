@@ -102,7 +102,7 @@
 			const marker = L.marker([lat, lon]).addTo(mymap);
             		var gps = L.layerGroup().addTo(mymap);
 			gps.addLayer(marker.bindPopup(gps.properties.LongLabel));
-			console.log(gps);
+			console.log(gps); });
 			/*popup.setContent('GPS: ' + '\n' + gps.properties.LongLabel); 
 			marker.bindPopup(popup).openPopup(); });*/
       		} else {}
