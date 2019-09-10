@@ -33,12 +33,6 @@
 	#extq {
 	    display: none;
 	}
-        @media (min-width:401px) and (max-width:1920px){
-            #map {
-                width: 1000px;
-                height: 700px;
-            }
-        }
         @media (orientation: landscape){
             #map {
                 width: 668px;
@@ -136,7 +130,6 @@
   	$(document).ready(function() {
     		$('.mdl-navigation__link').click(function(){
 			$('.mdl-layout__drawer').toggleClass('is-visible');
-			$('.mdl-layout__content').toggleClass('is-visible');
 		});
   	});
 	</script>
