@@ -134,7 +134,10 @@
 	</script>
 	<script>
   	$(document).ready(function() {
-    		$('.mdl-navigation__link-drawer').click(function(){$('.mdl-layout__drawer').toggleClass('is-visible');});
+    		$('.mdl-navigation__link').click(function(){
+			$('.mdl-layout__drawer').toggleClass('is-visible');
+			$('.mdl-layout__content').toggleClass('is-visible');
+		});
   	});
 	</script>
 	<script>
