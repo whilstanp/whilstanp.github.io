@@ -65,8 +65,8 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">&#128236; krosm menu</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link">back to app</a>
-            <a class="mdl-navigation__link" onclick="redir()">external query search</a>
+            <a class="mdl-navigation__link" onclick="showmap()" href="#map">map showcase</a>
+            <a class="mdl-navigation__link" onclick="query()" href="#extq">external query search</a>
             <a class="mdl-navigation__link">pinpoint slideshows</a>
         </nav>
     </div>
@@ -114,16 +114,21 @@
 	    </form>
         </div>
         <script>
-	function redir() {
+	function query() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
   		if (y.style.display === "none") {
     			y.style.display = "block";
-			x.style.display = "none";
-  		} else {
-    			y.style.display = "none";
-			x.style.display = "block";
-  		}
+			x.style.display = "none";} else {}
+	}
+	</script>
+        <script>
+        function showmap() {
+  		var x = document.getElementById("map");
+		var y = document.getElementById("extq");
+  		if (y.style.display === "none") {
+    	                y.style.display = "none";
+		        x.style.display = "block";} else {}
 	}
 	</script>
 	<script>
