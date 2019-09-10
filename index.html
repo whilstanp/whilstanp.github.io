@@ -31,6 +31,9 @@
             width: 400px;
             height: 524px;
         }
+	#extq {
+	    display: none;
+	}
         @media (min-width:401px) and (max-width:1920px){
             #map {
                 width: 1000px;
@@ -69,7 +72,7 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">&#128236; krosm menu</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">directions</a>
+            <a class="mdl-navigation__link" onclick="redir()">external query search</a>
             <a class="mdl-navigation__link" href="">pinpoint slideshows</a>
 	    <a class="mdl-navigation__link" href="">share or embed map</a>
         </nav>
@@ -82,7 +85,26 @@
 	</p>
         <div>
             <div id="map"></div>
+	    <form action="#" id="extq">
+  		<div class="mdl-textfield mdl-js-textfield">
+    			<textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+    			<label class="mdl-textfield__label" for="sample5">Text lines...</label>
+  		</div>
+	    </form>
         </div>
+        <script>
+	function redir() {
+  		var x = document.getElementById("map");
+		var y = document.getElementById("extq");
+  		if (y.style.display === "none") {
+    			y.style.display = "block";
+			x.style.display = "none";
+  		} else {
+    			y.style.display = "none";
+			x.style.display = "block";
+  		}
+	}
+</script>
 	<script>
 	if ('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(position => {
