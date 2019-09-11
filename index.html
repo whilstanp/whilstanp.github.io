@@ -170,13 +170,12 @@
                 		}
             		});
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
-                	const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup() });
-                	/*const popup = L.responsivePopup({ autoPanPadding: [10,10] });
+                	//const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup() });
 			const marker = L.marker([lat, lon]).addTo(mymap);
-            		var gps = L.layerGroup().addTo(mymap);
-			gps.addLayer(marker.bindPopup(gps.properties.LongLabel));
-			popup.setContent('GPS: ' + '\n' + gps.properties.LongLabel); 
-			marker.bindPopup(popup).openPopup(); });*/
+                	geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+      			if (error) { return; }
+      			marker.bindPopup(result.address.LongLabel).openPopup(); });
+			});
       		} else {}
 	</script>
     </div>
