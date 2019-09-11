@@ -172,7 +172,7 @@
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] }).setContent('current location');
                 	//const marker = L.marker([lat, lon]).addTo(mymap).bindPopup(popup).openPopup() });
 			const marker = L.marker([lat, lon]).addTo(mymap);
-                	geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+                	geocodeService.reverse().latlng([lat, lon]).run(function (error, result) {
       			if (error) { return; }
       			marker.bindPopup(result.address.LongLabel).openPopup(); });
 			});
