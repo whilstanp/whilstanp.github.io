@@ -26,6 +26,11 @@
 	body{
 	    font-family: 'Varela Round', sans-serif;
 	}
+	form{
+	    text-align: center;
+	    margin-left: auto !important;
+	    margin-right: auto !important;
+	}
         #map {
             width: 400px;
             height: 524px;
@@ -47,7 +52,7 @@
 	@media (orientation: landscape) and (min-width: 1280px){
             #map {
                 width: 1240px;
-                height: 380px;
+                height: 520px;
             }
         }
         .demo-layout-transparent {
@@ -151,8 +156,7 @@
   	$(document).ready(function() {
     		$('.mdl-navigation__link').click(function(){
 			//$('.mdl-layout__drawer').toggleClass('is-visible');
-			//$('.mdl-layout__content').toggleClass('is-visible');
-			$("body").css({"visible"});
+			$('.mdl-layout__content').toggleClass('is-visible');
 		});
   	});
 	</script>
