@@ -50,11 +50,6 @@
                 height: 524px;
             }
         }
-	.mdl-textfield, .mdl-js-textfield{
-	    text-align: center;
-	    margin-left: auto !important;
-	    margin-right: auto !important;
-	}
         .demo-layout-transparent {
             background: #008B8B center / cover;
         }
@@ -153,12 +148,8 @@
 	}
 	</script>
 	<script>
-  	$(document).ready(function() {
-    		$('.mdl-navigation__link').click(function(){
-			//$('.mdl-layout__drawer').toggleClass('is-visible');
-			$('.mdl-layout__content').toggleClass('is-visible');
-		});
-  	});
+  		var layout = document.querySelector('.mdl-layout');
+		layout.MaterialLayout.toggleDrawer();
 	</script>
 	<script>
 	if ('geolocation' in navigator) {
