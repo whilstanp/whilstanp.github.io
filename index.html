@@ -76,8 +76,8 @@
     <div class="mdl-layout__drawer" id="drawer">
         <span class="mdl-layout-title">&#128236; krosm menu</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" onclick="showmap()">map showcase</a>
-            <a class="mdl-navigation__link" onclick="query()">external query search</a>
+            <a class="mdl-navigation__link" onclick="showmap()" id="showmap">map showcase</a>
+            <a class="mdl-navigation__link" onclick="query()" id="ext">external query search</a>
             <a class="mdl-navigation__link">pinpoint slideshows</a>
         </nav>
     </div>
@@ -131,6 +131,10 @@
 		if (y.style.display === "none") {
 			y.style.display = "block";
 			x.style.display = "none";} else {}
+		var clicker = document.getElementById("ext");
+		clicker.onclick = function() {
+  			document.getElementById("drawer").className = "mdl-layout__drawer";
+		}
 	}
 	</script>
 	<script>
@@ -145,12 +149,10 @@
 			x.style.display = "block";
 			y.style.display = "none";
 		}
-	}
-	</script>
-	<script>
-  	var clicker = document.getElementById("clickme");
-	clicker.onclick = function() {
-  		document.getElementById("drawer").className = "mdl-layout__drawer";
+		var clicker = document.getElementById("showmap");
+		clicker.onclick = function() {
+  			document.getElementById("drawer").className = "mdl-layout__drawer";
+		}
 	}
 	</script>
 	<script>
