@@ -33,10 +33,21 @@
 	#extq {
 	    display: none;
 	}
+	@media screen and (device-aspect-ratio: 4/3) {
+	    #map {
+            width: 780px;
+            height: 580px;}
+	}
         @media (orientation: landscape){
             #map {
                 width: 668px;
                 height: 268px;
+            }
+        }
+	@media (orientation: landscape) and (min-width: 1280px){
+            #map {
+                width: 1260px;
+                height: 700px;
             }
         }
         .demo-layout-transparent {
@@ -117,23 +128,23 @@
 	function query() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
-  		if (y.style.display === "none") {
-    			y.style.display = "block";
+		if (y.style.display === "none") {
+			y.style.display = "block";
 			x.style.display = "none";} else {}
 	}
 	</script>
-        <script>
+	<script>
         function showmap() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
-  		if (x.style.display === "none") {
-                    x.style.display = "block";
-                    y.style.display = "none";
-                } 
-                else {
-                      x.style.display = "block";
-                      y.style.display = "none";
-                }
+		if (x.style.display === "none") {
+			x.style.display = "block";
+			y.style.display = "none";
+		} 
+		else {
+			x.style.display = "block";
+			y.style.display = "none";
+		}
 	}
 	</script>
 	<script>
