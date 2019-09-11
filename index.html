@@ -167,7 +167,8 @@
 			const marker = L.marker([lat, lon]).addTo(mymap);
                 	geocodeService.reverse().latlng([lat, lon]).run(function (error, result) {
       				if (error) { return; }
-      				marker.bindPopup('GPS: ' + result.address.LongLabel).openPopup(); });
+      				marker.bindPopup('GPS: ' + result.address.LongLabel).openPopup(); 
+				console.log(result); });
 			});
       		} else {}
 	</script>
