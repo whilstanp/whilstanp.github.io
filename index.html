@@ -73,7 +73,7 @@
             </span>
         </div>
     </header>
-    <div class="mdl-layout__drawer">
+    <div class="mdl-layout__drawer" id="drawer">
         <span class="mdl-layout-title">&#128236; krosm menu</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" onclick="showmap()">map showcase</a>
@@ -148,7 +148,10 @@
 	}
 	</script>
 	<script>
-  		$('.mdl-layout__drawer, .mdl-layout__obfuscator').removeClass('is-visible');
+  	var clicker = document.getElementById("clickme");
+	clicker.onclick = function() {
+  		document.getElementById("drawer").className = "mdl-layout__drawer";
+	}
 	</script>
 	<script>
 	if ('geolocation' in navigator) {
