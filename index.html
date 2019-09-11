@@ -26,11 +26,6 @@
 	body{
 	    font-family: 'Varela Round', sans-serif;
 	}
-	form{
-	    text-align: center;
-	    margin-left: auto !important;
-	    margin-right: auto !important;
-	}
         #map {
             width: 400px;
             height: 524px;
@@ -55,6 +50,11 @@
                 height: 520px;
             }
         }
+	.mdl-textfield, .mdl-js-textfield{
+	    text-align: center;
+	    margin-left: auto !important;
+	    margin-right: auto !important;
+	}
         .demo-layout-transparent {
             background: #008B8B center / cover;
         }
@@ -156,7 +156,7 @@
   	$(document).ready(function() {
     		$('.mdl-navigation__link').click(function(){
 			//$('.mdl-layout__drawer').toggleClass('is-visible');
-			$('.mdl-layout__content').toggleClass('is-visible');
+			$('.mdl-grid').toggleClass('is-visible');
 		});
   	});
 	</script>
