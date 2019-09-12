@@ -182,7 +182,7 @@
 	(function() {
 		function toJSONString(form) {
 			var obj = {};
-			var elements = form.querySelectorAll("input");
+			var elements = form.querySelectorAll("input, textarea");
 			for( var i = 0; i < elements.length; ++i ) {
 				var element = elements[i];
 				var name = element.name;
@@ -201,9 +201,9 @@
 			var json = toJSONString(this);
 			output.innerHTML = json;
 		}, false);
-	});
-    })();
-    </script>
+		});
+    	})();
+    	</script>
     </div>
     <footer id="ftr" class="mdl-mega-footer">
         <div class="mdl-mega-footer__middle-section">
