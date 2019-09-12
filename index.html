@@ -160,10 +160,10 @@
 			function onAccuratePositionError (e) {
     				console.log(e.message)
 			}
-			map.on('accuratepositionprogress', onAccuratePositionProgress);
-			map.on('accuratepositionfound', onAccuratePositionFound);
-			map.on('accuratepositionerror', onAccuratePositionError);
-			map.findAccuratePosition({
+			mymap.on('accuratepositionprogress', onAccuratePositionProgress);
+			mymap.on('accuratepositionfound', onAccuratePositionFound);
+			mymap.on('accuratepositionerror', onAccuratePositionError);
+			mymap.findAccuratePosition({
     				maxWait: 15000,
     				desiredAccuracy: 30
 			});
