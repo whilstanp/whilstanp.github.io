@@ -186,7 +186,7 @@
 					obj[name] = value;
 				}
 			}
-		return JSON.stringify(obj);
+		return JSON.stringify(obj,null,4);
 	}
 	document.addEventListener("DOMContentLoaded", function() {
 		var form = document.getElementById("extq");
