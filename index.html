@@ -85,38 +85,38 @@
             <div id="map"></div>
 	    <form action="#" id="extq" method="post">
   		<div class="mdl-textfield mdl-js-textfield">
-    			<textarea class="mdl-textfield__input" type="text" rows= "4" id="address" ></textarea>
+    			<textarea class="mdl-textfield__input" type="text" rows= "4" id="address" name="address"></textarea>
     			<label class="mdl-textfield__label" for="address">alamat</label>
   		</div><br>
 		<div class="mdl-textfield mdl-js-textfield">
-    			<textarea class="mdl-textfield__input" type="text" rows= "4" id="wayguide" ></textarea>
+    			<textarea class="mdl-textfield__input" type="text" rows= "4" id="wayguide" name="wayguide"></textarea>
     			<label class="mdl-textfield__label" for="wayguide">ancar-ancar</label>
   		</div><br>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    			<input class="mdl-textfield__input" type="text" id="city">
+    			<input class="mdl-textfield__input" type="text" id="city" name="city">
     			<label class="mdl-textfield__label" for="city">kota/kabupaten</label>
   		</div><br>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    			<input class="mdl-textfield__input" type="text" id="county">
+    			<input class="mdl-textfield__input" type="text" id="county" name="county">
     			<label class="mdl-textfield__label" for="county">kecamatan</label>
   		</div><br>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    			<input class="mdl-textfield__input" type="text" id="district">
+    			<input class="mdl-textfield__input" type="text" id="district" name="district">
     			<label class="mdl-textfield__label" for="district">desa/kelurahan</label>
   		</div><br>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    			<input class="mdl-textfield__input" type="text" id="subno">
+    			<input class="mdl-textfield__input" type="text" id="subno" name="subno">
     			<label class="mdl-textfield__label" for="subno">rt/rw</label>
   		</div><br>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="zipcode">
+    			<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="zipcode" name="zipcode">
     			<label class="mdl-textfield__label" for="zipcode">kodepos</label>
     			<span class="mdl-textfield__error">Input is not a number!</span>
   		</div><br>
 		<div>
-			<input type="submit" value="Send" class="btn btn-primary" />
+			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" value="Send">submit</button>
 		</div>
-		<p id="tojson"></p>
+		<pre id="tojson"></pre>
 	    </form>
         </div>
         <script>
@@ -134,16 +134,16 @@
         function showmap() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
-		//var z = document.getElementById("tojson");
+		var z = document.getElementById("tojson");
 		if (x.style.display === "none") {
 			x.style.display = "block";
 			y.style.display = "none";
-			//z.style.display = "none';
+			z.style.display = "none';
 		} 
 		else {
 			x.style.display = "block";
 			y.style.display = "none";
-			//z.style.display = "none";
+			z.style.display = "none";
 		}
 	}
 	</script>
@@ -179,10 +179,10 @@
       		} else {}
 	</script>
 	<script>
-	/*(function() {
+	(function() {
 		function toJSONString(form) {
 			var obj = {};
-			var elements = form.querySelectorAll("input, text");
+			var elements = form.querySelectorAll("input");
 			for( var i = 0; i < elements.length; ++i ) {
 				var element = elements[i];
 				var name = element.name;
@@ -202,7 +202,7 @@
 			output.innerHTML = json;
 		}, false);
 	});
-    })();*/
+    })();
     </script>
     </div>
     <footer id="ftr" class="mdl-mega-footer">
