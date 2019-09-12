@@ -149,16 +149,22 @@
 			document.getElementById('latitude').textContent = lat;
 			document.getElementById('longitude').textContent = lon;
 			const mymap = L.map('map').setView([lat, lon], 15);
+			const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+			const tiles = L.tileLayer(tileUrl, { attribution });
+			tiles.addTo(mymap);
+			var message = '';
 			function onAccuratePositionProgress (e) {
-    				console.log(e.accuracy);
-    				console.log(e.latlng);
+    				message = 'Progressing … (Accuracy: ' + e.accuracy + ')';
+				console.log(message, 'progressing');
 			}
 			function onAccuratePositionFound (e) {
-    				console.log(e.accuracy);
-    				console.log(e.latlng);
+    				message = 'Most accurate position found (Accuracy: ' + e.accuracy + ')';
+				console.log(message, 'done');
+				map.setView(e.latlng, 12);
 			}
 			function onAccuratePositionError (e) {
-    				console.log(e.message)
+    				console.log(e.message, 'error');
 			}
 			mymap.on('accuratepositionprogress', onAccuratePositionProgress);
 			mymap.on('accuratepositionfound', onAccuratePositionFound);
@@ -167,10 +173,6 @@
     				maxWait: 15000,
     				desiredAccuracy: 30
 			});
-			const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-			const tiles = L.tileLayer(tileUrl, { attribution });
-			tiles.addTo(mymap);
     			var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
     			var results = L.layerGroup().addTo(mymap);
 			var geocodeService = L.esri.Geocoding.geocodeService();
