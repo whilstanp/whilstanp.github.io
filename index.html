@@ -149,6 +149,24 @@
 			document.getElementById('latitude').textContent = lat;
 			document.getElementById('longitude').textContent = lon;
 			const mymap = L.map('map').setView([lat, lon], 15);
+			function onAccuratePositionProgress (e) {
+    				console.log(e.accuracy);
+    				console.log(e.latlng);
+			}
+			function onAccuratePositionFound (e) {
+    				console.log(e.accuracy);
+    				console.log(e.latlng);
+			}
+			function onAccuratePositionError (e) {
+    				console.log(e.message)
+			}
+			map.on('accuratepositionprogress', onAccuratePositionProgress);
+			map.on('accuratepositionfound', onAccuratePositionFound);
+			map.on('accuratepositionerror', onAccuratePositionError);
+			map.findAccuratePosition({
+    				maxWait: 15000,
+    				desiredAccuracy: 30
+			});
 			const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
