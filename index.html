@@ -72,7 +72,7 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" onclick="showmap()">map showcase</a>
             <a class="mdl-navigation__link" onclick="query()">external query search</a>
-            <a class="mdl-navigation__link">pinpoint slideshows</a>
+            <a class="mdl-navigation__link" id="clickme">world discovery</a>
         </nav>
     </div>
     <main class="mdl-layout__content">
@@ -118,6 +118,12 @@
 		</div>
 	    </form>
         </div>
+	<script>
+		var clicker = document.getElementById("clickme");
+		clicker.onclick = function() {
+  			document.getElementById("drawer").className = "mdl-layout__drawer";
+		}
+	</script>
         <script>
 	function query() {
   		var x = document.getElementById("map");
@@ -153,26 +159,6 @@
 			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			const tiles = L.tileLayer(tileUrl, { attribution });
 			tiles.addTo(mymap);
-			var message = '';
-			function onAccuratePositionProgress (e) {
-    				message = 'Progressing … (Accuracy: ' + e.accuracy + ')';
-				console.log(message, 'progressing');
-			}
-			function onAccuratePositionFound (e) {
-    				message = 'Most accurate position found (Accuracy: ' + e.accuracy + ')';
-				console.log(message, 'done');
-				map.setView(e.latlng, 12);
-			}
-			function onAccuratePositionError (e) {
-    				console.log(e.message, 'error');
-			}
-			mymap.on('accuratepositionprogress', onAccuratePositionProgress);
-			mymap.on('accuratepositionfound', onAccuratePositionFound);
-			mymap.on('accuratepositionerror', onAccuratePositionError);
-			mymap.findAccuratePosition({
-    				maxWait: 15000,
-    				desiredAccuracy: 30
-			});
     			var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
     			var results = L.layerGroup().addTo(mymap);
 			var geocodeService = L.esri.Geocoding.geocodeService();
