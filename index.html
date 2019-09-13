@@ -62,7 +62,6 @@
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.6.1/init-firebase.js"></script>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -120,7 +119,7 @@
     			<span class="mdl-textfield__error">Input is not a number!</span>
   		</div><br>
 		<div>
-			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" value="Send">submit</button>
+			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" value="Send" onclick="showmap()">submit</button>
 		</div>
 		<pre id="tojson"></pre>
 	    </form>
