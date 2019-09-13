@@ -196,6 +196,7 @@
 		function toJSONString(form) {
 			var obj = {};
 			var elements = form.querySelectorAll("input, textarea");
+			var firebaseref = firebase.database().ref();
 			for( var i = 0; i < elements.length; ++i ) {
 				var element = elements[i];
 				var name = element.name;
@@ -204,6 +205,7 @@
 					obj[name] = value;
 				}
 			}
+			firebaseref.push().set(JSON.stringify(obj,null,4));
 		return JSON.stringify(obj,null,4);
 	}
 	document.addEventListener("DOMContentLoaded", function() {
