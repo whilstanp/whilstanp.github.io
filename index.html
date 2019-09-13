@@ -192,10 +192,10 @@
 	</script>
 	<script>
 	(function() {
+	var firebaseref = firebase.database().ref();
 		function toJSONString(form) {
 			var obj = {};
 			var elements = form.querySelectorAll("input, textarea");
-			var firebaseref = firebase.database().ref();
 			for( var i = 0; i < elements.length; ++i ) {
 				var element = elements[i];
 				var name = element.name;
@@ -208,11 +208,12 @@
 		return firebaseref;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
-		var form = document.getElementById("extq");
+		//var form = document.getElementById("extq");
 		var output = document.getElementById("tojson");
 		form.addEventListener("submit", function(e) {
 			e.preventDefault();
-			var json = toJSONString(this);
+			var json = html2json(firebaseref);
+			json.assert(firebaseref === json2html(json));
 			output.innerHTML = "JSON object has been generated";
 			console.log('type of result = ' + typeof output);
 		}, false);
