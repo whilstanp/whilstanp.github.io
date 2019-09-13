@@ -204,8 +204,8 @@
 					obj[name] = value;
 				}
 			}
-			firebaseref.push().set(JSON.stringify(obj,null,4));
-		return JSON.stringify(obj,null,4);
+			firebaseref.push().set(JSON.stringify(obj));
+		return firebaseref;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
 		var form = document.getElementById("extq");
