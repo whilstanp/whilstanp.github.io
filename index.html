@@ -204,7 +204,7 @@
 					obj[name] = value;
 				}
 			}
-			firebaseref.push().set(JSON.parse(obj));
+			firebaseref.push().set((obj));
 		return firebaseref;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
