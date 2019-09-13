@@ -168,7 +168,7 @@
 			const marker = L.marker([lat, lon]).addTo(mymap);
                 	geocodeService.reverse().latlng([lat, lon]).run(function (error, result) {
       				if (error) { return; }
-      				marker.bindPopup('GPS: ' + result.address.LongLabel).openPopup(); 
+      				marker.bindPopup('<b>GPS: </b>\n' + result.address.LongLabel).openPopup(); 
 				console.log(result); });
 			});
       		} else {}
@@ -195,6 +195,7 @@
 			e.preventDefault();
 			var json = toJSONString(this);
 			output.innerHTML = json;
+			document.write("<br>type of result = " + typeof output);
 		}, false);
 		});
     	})();
