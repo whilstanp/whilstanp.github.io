@@ -16,8 +16,6 @@
     <script src="https://unpkg.com/esri-leaflet"></script>
     <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css">
     <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="/jquery.serializejson.js"></script>
     <title>Progressive Web Apps</title>
     <style>
 	.mdl-layout-title, .mdl-layout__title{
@@ -196,7 +194,7 @@
 	(function() {
 	var firebaseref = firebase.database().ref();
 		function toJSONString(form) {
-			/*var obj = {};
+			var obj = {};
 			var elements = form.querySelectorAll("input, textarea");
 			for( var i = 0; i < elements.length; ++i ) {
 				var element = elements[i];
@@ -206,8 +204,7 @@
 					obj[name] = value;
 				}
 			}
-			firebaseref.push().set((obj));*/
-			firebaseref.push().set(($('form').serializeJSON()));
+			firebaseref.push().set((obj));
 		return firebaseref;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
