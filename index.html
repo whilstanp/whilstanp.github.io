@@ -192,8 +192,7 @@
 	</script>
 	<script>
 	(function() {
-	//var firebaseref = firebase.database().ref();
-	var firebaseref = firebase.database().ref('/');
+	var firebaseref = firebase.database().ref();
 	function toJSONString(form) {
     		var obj = {};
     		var elements = form.querySelectorAll("input, textarea");
@@ -205,7 +204,6 @@
 				obj[name] = value;
 			}
 		}
-    		firebaseref.child(node).update(obj).then(function() { console.log('Update Ran Successfully'); });
 		firebaseref.push().set((obj));
 		return firebaseref;
 	}
