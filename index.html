@@ -193,6 +193,7 @@
 	<script>
 	(function() {
 	var addr = firebase.database().ref("address");
+	var coord = firebase.database().ref("coordinates");
 	function toJSONString(form) {
     		var obj = {};
     		var elements = form.querySelectorAll("input, textarea");
@@ -204,7 +205,7 @@
 				obj[name] = value;
 			}
 		}
-		addr.child("address").push().set((obj));
+		addr.push().set((obj));
 		return addr;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
