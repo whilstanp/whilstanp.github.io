@@ -205,7 +205,6 @@
 				obj[name] = value;
 			}
 		}
-		obj[key] = value;
     		firebaseref.child(node).update(obj).then(function() { console.log('Update Ran Successfully'); });
 		firebaseref.push().set((obj));
 		return firebaseref;
