@@ -192,18 +192,21 @@
 	</script>
 	<script>
 	(function() {
-	var firebaseref = firebase.database().ref();
-		function toJSONString(form) {
-    			var obj = {};
-    			var elements = form.querySelectorAll("input, textarea");
-			for( var i = 0; i < elements.length; ++i ) {
-				var element = elements[i];
-				var name = element.name;
-				var value = element.value;
-				if(name) {
-					obj[name] = value;
-				}
+	//var firebaseref = firebase.database().ref();
+	var firebaseref = firebase.database().ref('/');
+	function toJSONString(form) {
+    		var obj = {};
+    		var elements = form.querySelectorAll("input, textarea");
+		for( var i = 0; i < elements.length; ++i ) {
+			var element = elements[i];
+			var name = element.name;
+			var value = element.value;
+			if(name) {
+				obj[name] = value;
 			}
+		}
+		obj[key] = value;
+    		firebaseref.child(node).update(obj).then(function() { console.log('Update Ran Successfully'); });
 		firebaseref.push().set((obj));
 		return firebaseref;
 	}
