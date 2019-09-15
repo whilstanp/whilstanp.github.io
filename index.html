@@ -192,7 +192,7 @@
 	</script>
 	<script>
 	(function() {
-	var firebaseref = firebase.database().ref();
+	var addr = firebase.database().ref("address");
 	function toJSONString(form) {
     		var obj = {};
     		var elements = form.querySelectorAll("input, textarea");
@@ -204,8 +204,8 @@
 				obj[name] = value;
 			}
 		}
-		firebaseref.push().set((obj));
-		return firebaseref;
+		addr.child("address").push().set((obj));
+		return addr;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
 		var form = document.getElementById("extq");
