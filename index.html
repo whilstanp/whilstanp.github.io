@@ -195,6 +195,14 @@
 	var firebaseref = firebase.database().ref();
 	var obj = {}, inputs = [].slice.call(document.getElementById('extq').querySelectorAll('input, textarea')), name, hold, splits, L, dKey;
 		function toJSONString(form) {
+			function groupIntoPairs(arr) {
+        			var temp = arr.slice();
+        			var out = [];
+        			while (temp.length) {
+            				out.push(temp.splice(0,2));
+        			}
+        		return out;
+    			}
 			inputs.forEach(function(n) {
         			name = n.name;
         			hold = '';
@@ -220,7 +228,7 @@
 					obj[name] = value;
 				}
 			}*/
-			firebaseref.push().set((obj));
+		firebaseref.push().set((obj));
 		return firebaseref;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
