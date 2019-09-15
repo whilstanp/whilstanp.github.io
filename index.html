@@ -193,32 +193,33 @@
 	<script>
 	(function() {
 	var firebaseref = firebase.database().ref();
-	var obj = {}, inputs = [].slice.call(document.getElementById('extq').querySelectorAll('input, textarea')), name, hold, splits, L, dKey;
 		function toJSONString(form) {
-			function groupIntoPairs(arr) {
-        			var temp = arr.slice();
-        			var out = [];
-        			while (temp.length) {
-            				out.push(temp.splice(0,2));
-        			}
-        		return out;
-    			}
-			inputs.forEach(function(n) {
-        			name = n.name;
-        			hold = '';
-        			splits = groupIntoPairs( name.split('.') );
-        			L = splits.length - 1;
-        			if (L === 0) {
-            				obj[name] = n.value;
-        			} else {
-            			splits.forEach(function(x, i) {
-                		if (i !== L) hold += '.' + x.join('.');
-            		});
-            		dKey = hold.slice(1);
-            		obj[dKey] = obj[dKey] || {};
-            		obj[dKey][splits[L][0]] = n.value;                
-        		}
-    		});
+			var elements = document.querySelectorAll('#extq input textarea');
+    			var data = {};
+    			for (var i = 0; i < elements.length; i++) {
+      				var el = elements[i];
+      				var val = el.value;
+      				if (!val) val = "";
+      				var fullName = el.getAttribute("name");
+      				if (!fullName) continue;
+      				var fullNameParts = fullName.split('.');
+      				var prefix = '';
+      				var stack = data;
+      				for (var k = 0; k < fullNameParts.length - 1; k++) {
+        				prefix = fullNameParts[k];
+        				if (!stack[prefix]) {
+          					stack[prefix] = {};
+        				}
+        				stack = stack[prefix];
+      				}
+      				prefix = fullNameParts[fullNameParts.length - 1];
+      				if (stack[prefix]) {
+        				var newVal = stack[prefix] + ',' + val;
+        				stack[prefix] += newVal;
+      				} else {
+        				stack[prefix] = val;
+      				}
+    		}
 			/*var elements = form.querySelectorAll("input, textarea");
 			for( var i = 0; i < elements.length; ++i ) {
 				var element = elements[i];
@@ -228,7 +229,7 @@
 					obj[name] = value;
 				}
 			}*/
-		firebaseref.push().set((obj));
+		firebaseref.push().set((data));
 		return firebaseref;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
