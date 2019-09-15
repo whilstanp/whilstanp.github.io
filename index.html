@@ -193,9 +193,25 @@
 	<script>
 	(function() {
 	var firebaseref = firebase.database().ref();
+	var obj = {}, inputs = [].slice.call(document.getElementById('extq').querySelectorAll('input, textarea')), name, hold, splits, L, dKey;
 		function toJSONString(form) {
-			var obj = {};
-			var elements = form.querySelectorAll("input, textarea");
+			inputs.forEach(function(n) {
+        			name = n.name;
+        			hold = '';
+        			splits = groupIntoPairs( name.split('.') );
+        			L = splits.length - 1;
+        			if (L === 0) {
+            				obj[name] = n.value;
+        			} else {
+            			splits.forEach(function(x, i) {
+                		if (i !== L) hold += '.' + x.join('.');
+            		});
+            		dKey = hold.slice(1);
+            		obj[dKey] = obj[dKey] || {};
+            		obj[dKey][splits[L][0]] = n.value;                
+        		}
+    		});
+			/*var elements = form.querySelectorAll("input, textarea");
 			for( var i = 0; i < elements.length; ++i ) {
 				var element = elements[i];
 				var name = element.name;
@@ -203,7 +219,7 @@
 				if(name) {
 					obj[name] = value;
 				}
-			}
+			}*/
 			firebaseref.push().set((obj));
 		return firebaseref;
 	}
