@@ -204,9 +204,9 @@
 				obj[name] = value;
 			}
 		}
-		addr.child("query/address").push().set(obj);
-		//addr.child("query/coordinates").push().set(obj); coordinates -> latitude, longitude
-		return addr;
+		query.child("query/address").push().set(obj);
+		//query.child("query/coordinates").push().set(obj); coordinates -> latitude, longitude
+		return query;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
 		var form = document.getElementById("extq");
