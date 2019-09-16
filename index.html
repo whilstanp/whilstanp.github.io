@@ -204,8 +204,8 @@
 				obj[name] = value;
 			}
 		}
-		query.child("query/address").push().set(obj);
-		query.child("query/coordinates").push().set("");
+		query.child("address").push().set(obj);
+		query.child("coordinates").push().set("");
 		//query.child("query/coordinates").push().set(obj); coordinates -> latitude, longitude
 		return query;
 	}
