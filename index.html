@@ -199,8 +199,8 @@
         				return;
       				}
       				L.marker(result.latlng).addTo(mymap).bindPopup(result.address.LongLabel).openPopup();
-				document.getElementById('lat_').textContent = result.latlon.lat;
-				document.getElementById('lon_').textContent = result.latlon.lng;
+				document.getElementById('lat_').textContent = result.latlng.lat;
+				document.getElementById('lon_').textContent = result.latlng.lng;
 				console.log(result);
     				});
   			});
