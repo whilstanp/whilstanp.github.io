@@ -1,4 +1,1 @@
-https://github.com/mapbox/mapbox-sdk-js
-https://www.domoritz.de/leaflet-locatecontrol/
-https://leafletjs.com/plugins.html#search--popups
-https://github.com/Esri/esri-leaflet-geocoder
+https://github.com/csr/OpenStreetMap-ReactJS
