@@ -275,8 +275,8 @@
 			}
 		}
 		addr.push().set(obj);
-		addr.on('value',function(datasnapshot){
-			o.innerText = datasnapshot.val();
+		addr.once("value").then(function(snapshot){
+			o.innerText = snapshot.val();
 		});
 		return addr;
 	}
