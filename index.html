@@ -29,7 +29,7 @@
             width: 400px;
             height: 524px;
         }
-	#extq {
+	#cq, #extq {
 	    display: none;
 	}
         @media (orientation: landscape){
@@ -87,10 +87,12 @@
         longitude: <span id="longitude"></span>&deg;
 	</p>
         <div>
+	    <p id="cq">
+        	latitude: <span id="lat_"></span>&deg;<br />
+        	longitude: <span id="lon_"></span>&deg;
+	    </p>
             <div id="map"></div>
 	    <form action="#" id="extq" method="post">
-		latitude: <input type="text" name="latitude" id="lat_"><br>
-		longitude: <input type="text" name="longitude" id="lon_"><br>
   		<div class="mdl-textfield mdl-js-textfield">
     			<textarea class="mdl-textfield__input" type="text" rows= "4" id="address" name="address"></textarea>
     			<label class="mdl-textfield__label" for="address">alamat</label>
@@ -142,8 +144,10 @@
 	function query() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
+		var z = document.getElementById("cq");
 		if (y.style.display === "none") {
 			y.style.display = "block";
+			z.style.display = "block";
 			x.style.display = "none";} else {}
 	}
 	</script>
@@ -151,13 +155,16 @@
         function showmap() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
+		var z = document.getElementById("cq");
 		if (x.style.display === "none") {
 			x.style.display = "block";
 			y.style.display = "none";
+			z.style.display = "none";
 		} 
 		else {
 			x.style.display = "block";
 			y.style.display = "none";
+			z.style.display = "none";
 		}
 	}
 	</script>
@@ -205,10 +212,13 @@
 	</script>
 	<script>
 	(function() {
-	var addr = firebase.database().ref("addr");
+	var addr = firebase.database().ref("address");
+	var coord = firebase.database().ref("coordinates");
 	function toJSONString(form) {
     		var obj = {};
     		var elements = form.querySelectorAll("input, textarea");
+		var lt = document.getElementById('lat_');
+		var ln = document.getElementById('lon_');
 		for( var i = 0; i < elements.length; ++i ) {
 			var element = elements[i];
 			var name = element.name;
@@ -218,6 +228,7 @@
 			}
 		}
 		addr.push().set(obj);
+		coord.push().set(lt,ln);
 		return addr;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
