@@ -181,6 +181,14 @@
 					console.log(data.results[i]);
                 		}
             		});
+			mymap.on('click', function (e) {
+    				geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+      					if (error) {
+        					return;
+      					}
+      				L.marker(result.latlng).addTo(mymap).bindPopup(result.address.LongLabel).openPopup();
+    				});
+  			});
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] });
 			const marker = L.marker([lat, lon]).addTo(mymap);
                 	geocodeService.reverse().latlng([lat, lon]).run(function (error, result) {
