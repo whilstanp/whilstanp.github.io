@@ -93,6 +93,14 @@
 	    </p>
             <div id="map"></div>
 	    <form action="#" id="extq" method="post">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    			<input class="mdl-textfield__input" type="text" id="lat_" name="latitude">
+    			<label class="mdl-textfield__label" for="latitude">copy latitude value</label>
+  		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    			<input class="mdl-textfield__input" type="text" id="lon_" name="longitude">
+    			<label class="mdl-textfield__label" for="longitude">copy longitude value</label>
+  		</div>
   		<div class="mdl-textfield mdl-js-textfield">
     			<textarea class="mdl-textfield__input" type="text" rows= "4" id="address" name="address"></textarea>
     			<label class="mdl-textfield__label" for="address">alamat</label>
@@ -213,7 +221,6 @@
 	<script>
 	(function() {
 	var addr = firebase.database().ref("address");
-	var coord = firebase.database().ref("coordinates");
 	function toJSONString(form) {
     		var obj = {};
     		var elements = form.querySelectorAll("input, textarea");
@@ -228,8 +235,6 @@
 			}
 		}
 		addr.push().set(obj);
-		coord.child("latitude").push().set(lt);
-		coord.child("longitude").push().set(lt);
 		return addr;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
