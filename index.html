@@ -131,6 +131,18 @@
     			<label class="mdl-textfield__label" for="zipcode">kodepos</label>
     			<span class="mdl-textfield__error">Input is not a number!</span>
   		</div><br>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    			<input class="mdl-textfield__input" type="text" id="rpa" name="rpa">
+    			<label class="mdl-textfield__label" for="rpa">place snapshot from repository (1)</label>
+  		</div><br>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    			<input class="mdl-textfield__input" type="text" id="rpb" name="rpb">
+    			<label class="mdl-textfield__label" for="rpb">place snapshot from repository (2)/label>
+  		</div><br>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    			<input class="mdl-textfield__input" type="text" id="rpb" name="rpb">
+    			<label class="mdl-textfield__label" for="rpb">place snapshot from repository (3)</label>
+  		</div><br>
 		<div>
 			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" value="Send" onclick="showmap()">submit</button>
 		</div>
@@ -204,7 +216,7 @@
       				if (error) {
         				return;
       				}
-      				L.marker(result.latlng).addTo(mymap).bindPopup(result.address.LongLabel).openPopup();
+      				L.marker(result.latlng).addTo(mymap).bindPopup('<b>For new place: </b><br>' + result.address.LongLabel).openPopup();
 				document.getElementById('lat_').textContent = result.latlng.lat;
 				document.getElementById('lon_').textContent = result.latlng.lng;
 				console.log(result);
