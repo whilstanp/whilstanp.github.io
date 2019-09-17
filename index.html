@@ -260,8 +260,6 @@
 	<script>
 	(function() {
 	var addr = firebase.database().ref("address");
-	var admin = require("firebase-admin");
-	var db = admin.database();
 	function toJSONString(form) {
     		var obj = {};
     		var elements = form.querySelectorAll("input, textarea");
@@ -277,9 +275,6 @@
 			}
 		}
 		addr.push().set(obj);
-		addr.on("value", function(snapshot) {
-			o.innerText = snapshot.val();
-		});
 		return addr;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
