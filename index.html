@@ -228,7 +228,8 @@
 			}
 		}
 		addr.push().set(obj);
-		coord.push().set(lt,ln);
+		coord.child("latitude").push().set(lt);
+		coord.child("longitude").push().set(lt);
 		return addr;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
