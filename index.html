@@ -32,6 +32,9 @@
 	#extq {
 	    display: none;
 	}
+	#cq {
+	    display: none;
+	}
         @media (orientation: landscape){
             #map {
                 width: 668px;
@@ -87,7 +90,7 @@
         longitude: <span id="longitude"></span>&deg;
 	</p>
         <div>
-	    <p>
+	    <p id="cq">
         	latitude: <span id="lat_"></span>&deg;<br />
         	longitude: <span id="lon_"></span>&deg;
 	    </p>
@@ -144,8 +147,10 @@
 	function query() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
+		var z = document.getElementById("cq");
 		if (y.style.display === "none") {
 			y.style.display = "block";
+			z.style.display = "block";
 			x.style.display = "none";} else {}
 	}
 	</script>
@@ -153,13 +158,16 @@
         function showmap() {
   		var x = document.getElementById("map");
 		var y = document.getElementById("extq");
+		var z = document.getElementById("cq");
 		if (x.style.display === "none") {
 			x.style.display = "block";
 			y.style.display = "none";
+			z.style.display = "none";
 		} 
 		else {
 			x.style.display = "block";
 			y.style.display = "none";
+			z.style.display = "none";
 		}
 	}
 	</script>
@@ -191,8 +199,8 @@
         				return;
       				}
       				L.marker(result.latlng).addTo(mymap).bindPopup(result.address.LongLabel).openPopup();
-				document.getElementById('lat_').textContent = "";
-				document.getElementById('lon_').textContent = "";
+				document.getElementById('lat_').textContent = result.latlon.lat;
+				document.getElementById('lon_').textContent = result.latlon.lng;
 				console.log(result);
     				});
   			});
