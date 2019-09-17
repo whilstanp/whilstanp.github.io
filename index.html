@@ -87,6 +87,10 @@
         longitude: <span id="longitude"></span>&deg;
 	</p>
         <div>
+	    <p>
+        	latitude: <span id="lat_"></span>&deg;<br />
+        	longitude: <span id="lon_"></span>&deg;
+	    </p>
             <div id="map"></div>
 	    <form action="#" id="extq" method="post">
   		<div class="mdl-textfield mdl-js-textfield">
@@ -183,10 +187,13 @@
             		});
 			mymap.on('click', function (e) {
     				geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
-      					if (error) {
-        					return;
-      					}
+      				if (error) {
+        				return;
+      				}
       				L.marker(result.latlng).addTo(mymap).bindPopup(result.address.LongLabel).openPopup();
+				document.getElementById('lat_').textContent = "";
+				document.getElementById('lon_').textContent = "";
+				console.log(result);
     				});
   			});
 			const popup = L.responsivePopup({ autoPanPadding: [10,10] });
@@ -214,7 +221,7 @@
 		}
 		query.child("address").push().set(obj);
 		query.child("coordinates").push().set("");
-		//query.child("query/coordinates").push().set(obj); coordinates -> latitude, longitude
+		//query.child("coordinates/longitude").push().set(...); coordinates -> latitude, longitude
 		return query;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
