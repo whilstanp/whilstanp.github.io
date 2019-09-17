@@ -219,6 +219,8 @@
 	function toJSONString(form) {
     		var obj = {};
     		var elements = form.querySelectorAll("input, textarea");
+		var lt = document.getElementById("lat_");
+		var ln = document.getElementById("lon_");
 		for( var i = 0; i < elements.length; ++i ) {
 			var element = elements[i];
 			var name = element.name;
@@ -228,8 +230,8 @@
 			}
 		}
 		query.child("address").push().set(obj);
-		query.child("coordinates").push().set("");
-		//query.child("coordinates/longitude").push().set(...); coordinates -> latitude, longitude
+		query.child("coordinates/latitude").push().set(lt);
+		query.child("coordinates/longitude").push().set(ln);
 		return query;
 	}
 	document.addEventListener("DOMContentLoaded", function() {
