@@ -20,6 +20,8 @@ var request = new Request('https://krosm-74bc5.firebaseio.com/', {
 });
 fetch(request).then(response => response.json())
 .then(data => {
-  console.log(data)
+  	console.log(data)
 })
-.catch(error => console.error(error));
+.then(function(responseObj) {
+	console.log('status: ', responseObj.status);
+});
