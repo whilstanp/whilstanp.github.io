@@ -297,7 +297,7 @@
         	const baseUrl = "https://krosm-74bc5.firebaseio.com";
         	function loadaddress() {
             		$("#ring").empty();
-            		$.get(baseUrl + ".json").then(displayaddress).catch(displayError);
+            		$.get(baseUrl).then(displayaddress).catch(displayError);
         	}
         	function displayaddress(adr) {
             		let keys = Object.keys(adr);
