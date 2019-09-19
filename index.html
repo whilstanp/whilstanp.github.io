@@ -78,7 +78,7 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" onclick="showmap()">map showcase</a>
             <a class="mdl-navigation__link" onclick="query()">add new place</a>
-	    <a class="mdl-navigation__link" onclick="history()">external history</a>
+	    <a class="mdl-navigation__link" onclick="history()" id="fget">external history</a>
             <a class="mdl-navigation__link">world discovery</a>
         </nav>
     </div>
@@ -292,7 +292,7 @@
     	</script>
 	<script>
     	$(function () {
-        	$("#btnLoad").click(loadaddress);
+        	$("#fget").click(loadaddress);
         	//$("#btnCreate").click(createContact);
         	const baseUrl = "https://krosm-74bc5.firebaseio.com";
         	function loadaddress() {
