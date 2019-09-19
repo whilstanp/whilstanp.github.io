@@ -1,6 +1,6 @@
-var title = document.querySelector('.title');
+/*var title = document.querySelector('.title');
 var courseFeatureElements = document.querySelectorAll('.course-feature');
-var button = document.querySelector('button');
+var button = document.querySelector('button');*/
 navigator.serviceWorker.register('/sw.js');
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js', {scope: '/'})
@@ -22,4 +22,4 @@ fetch(request).then(response => response.json())
 .then(data => {
   console.log(data)
 })
-.catch(error => console.error(error)) });
+.catch(error => console.error(error));
