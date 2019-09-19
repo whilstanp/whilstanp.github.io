@@ -10,3 +10,16 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with ' + error);
   });
 }
+var request = new Request('https://krosm-74bc5.firebaseio.com/', {
+	method: 'GET', 
+	mode: 'cors', 
+	redirect: 'follow',
+	headers: new Headers({
+		'Content-Type': 'text/plain'
+	})
+});
+fetch(request).then(response => response.json())
+.then(data => {
+  console.log(data)
+})
+.catch(error => console.error(error)) });
