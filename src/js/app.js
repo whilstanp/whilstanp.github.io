@@ -10,16 +10,18 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with ' + error);
   });
 }
-var request = new Request('https://krosm-74bc5.firebaseio.com/', {
-	method: 'GET', 
-	mode: 'no-cors', 
-	redirect: 'follow',
-	headers: new Headers({
-		'Content-Type': 'application/x-www-form-urlencoded'
-	})
-});
-fetch(request).then(response => response.json())
-.then(data => {
-  	console.log(data)
-})
-.catch(error => console.error('Error:', error));
+if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+  	request = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+	try {
+    		request = new ActiveXObject('Msxml2.XMLHTTP');
+  	} 
+  	catch (e) {
+    		try {
+      		request = new ActiveXObject('Microsoft.XMLHTTP');
+    	} 
+    	catch (e) {}
+  	}
+}
+request.open('GET', 'https://davidwalsh.name/ajax-endpoint', true);
+request.send(null);
