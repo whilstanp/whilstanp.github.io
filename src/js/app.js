@@ -12,16 +12,14 @@ if ('serviceWorker' in navigator) {
 }
 var request = new Request('https://krosm-74bc5.firebaseio.com/', {
 	method: 'GET', 
-	mode: 'cors', 
+	mode: 'no-cors', 
 	redirect: 'follow',
 	headers: new Headers({
-		'Content-Type': 'text/plain'
+		'Content-Type': 'application/x-www-form-urlencoded'
 	})
 });
 fetch(request).then(response => response.json())
 .then(data => {
   	console.log(data)
 })
-.then(function(responseObj) {
-	console.log('status: ', responseObj.status);
-});
+.catch(error => console.error('Error:', error));
