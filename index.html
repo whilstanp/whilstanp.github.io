@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -295,7 +296,7 @@
         	$("#fget").click(loadaddress);
         	const baseUrl = "https://krosm-74bc5.firebaseio.com";
         	function loadaddress() {
-            		$("#ring").empty();
+            		//$("#ring").empty();
             		$.get(baseUrl).then(displayaddress).catch(displayError);
         	}
         	function displayaddress(adr) {
