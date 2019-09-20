@@ -10,9 +10,9 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with ' + error);
   });
 }
-if (window.XMLHttpRequest) {
+/*if (window.XMLHttpRequest) {
   	request = new XMLHttpRequest();
-} else if (window.ActiveXObject) { // IE
+} else if (window.ActiveXObject) {
 	try {
     		request = new ActiveXObject('Msxml2.XMLHTTP');
   	} 
@@ -23,10 +23,26 @@ if (window.XMLHttpRequest) {
     	catch (e) {}
   	}
 }
+request.open('GET', 'https://krosm-74bc5.firebaseio.com', true);
+request.send(null);*/
 var url = 'https://krosm-74bc5.firebaseio.com';
-var xhr = createCORSRequest('PUT', url);
+var xhr = createCORSRequest('GET', url);
+if (!xhr) {
+    alert('CORS not supported');
+    return;
+}
 xhr.setRequestHeader(
     'X-Custom-Header', 'value');
 xhr.send();
-request.open('GET', 'https://krosm-74bc5.firebaseio.com', true);
-request.send(null);
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    xhr = null;
+  }
+  return xhr;
+}
