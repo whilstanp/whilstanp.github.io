@@ -10,7 +10,7 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with ' + error);
   });
 }
-if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+if (window.XMLHttpRequest) {
   	request = new XMLHttpRequest();
 } else if (window.ActiveXObject) { // IE
 	try {
@@ -23,5 +23,10 @@ if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     	catch (e) {}
   	}
 }
-request.open('GET', 'https://davidwalsh.name/ajax-endpoint', true);
+var url = 'https://krosm-74bc5.firebaseio.com';
+var xhr = createCORSRequest('PUT', url);
+xhr.setRequestHeader(
+    'X-Custom-Header', 'value');
+xhr.send();
+request.open('GET', 'https://krosm-74bc5.firebaseio.com', true);
 request.send(null);
