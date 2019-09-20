@@ -25,6 +25,7 @@ if ('serviceWorker' in navigator) {
 }
 request.open('GET', 'https://krosm-74bc5.firebaseio.com', true);
 request.send(null);*/
+var url = 'https://krosm-74bc5.firebaseio.com';
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
@@ -45,7 +46,6 @@ function getTitle(text) {
   return text.match('<title>(.*)?</title>')[1];
 }
 function makeCorsRequest() {
-  var url = 'https://krosm-74bc5.firebaseio.com';
   var xhr = createCORSRequest('GET', url);
   if (!xhr) {
     alert('CORS not supported');
