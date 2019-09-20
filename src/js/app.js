@@ -25,15 +25,6 @@ if ('serviceWorker' in navigator) {
 }
 request.open('GET', 'https://krosm-74bc5.firebaseio.com', true);
 request.send(null);*/
-var url = 'https://krosm-74bc5.firebaseio.com';
-var xhr = createCORSRequest('GET', url);
-if (!xhr) {
-    alert('CORS not supported');
-    return;
-}
-xhr.setRequestHeader(
-    'X-Custom-Header', 'value');
-xhr.send();
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
@@ -45,4 +36,28 @@ function createCORSRequest(method, url) {
     xhr = null;
   }
   return xhr;
+}
+var xhr = createCORSRequest('GET', url);
+if (!xhr) {
+  throw new Error('CORS not supported');
+}
+function getTitle(text) {
+  return text.match('<title>(.*)?</title>')[1];
+}
+function makeCorsRequest() {
+  var url = 'https://krosm-74bc5.firebaseio.com';
+  var xhr = createCORSRequest('GET', url);
+  if (!xhr) {
+    alert('CORS not supported');
+    return;
+  }
+  xhr.onload = function() {
+    var text = xhr.responseText;
+    var title = getTitle(text);
+    alert('Response from CORS request to ' + url + ': ' + title);
+  };
+  xhr.onerror = function() {
+    alert('Woops, there was an error making the request.');
+  };
+  xhr.send();
 }
