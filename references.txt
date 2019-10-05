@@ -1,1 +1,1 @@
-https://github.com/csr/OpenStreetMap-ReactJS
+https://gist.github.com/Lego2012/39fe5ecac7b7ea723125cbeafee752f9
