@@ -162,7 +162,6 @@
     		messagingSenderId: "53699996984",
     		appId: "1:53699996984:web:c469975babbe306fc7e5cd"
     	};
-	//const cors = require('cors')({origin: true});
     	firebase.initializeApp(firebaseConfig);
   	</script>
         <script>
@@ -178,13 +177,6 @@
 			x.style.display = "none";} else {}
 	}
 	</script>
-	<?php
-		header("Access-Control-Allow-Origin: https://krosm-74bc5.firebaseio.com");
-		header("Access-Control-Allow-Credentials: true");
-		header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE");
-		header("Access-Control-Max-Age: 86400");
-		header("Access-Control-Allow-Headers: Content-Type, Accept, X-Requested-With, remember-me");
-	?>
 	<script>
         function showmap() {
 		var w = document.getElementById("ring");
@@ -224,6 +216,11 @@
 			z.style.display = "none";
 		}
 	}
+	</script>
+	<script>
+	$(document).ready(function(){
+   		
+	});
 	</script>
 	<script>
 	if ('geolocation' in navigator) {
@@ -275,7 +272,7 @@
     		var elements = form.querySelectorAll("input, textarea");
 		var lt = document.getElementById('lat_');
 		var ln = document.getElementById('lon_');
-		var o = document.getElementById('ring');
+		//var o = document.getElementById('ring');
 		for(var i = 0; i < elements.length; ++i) {
 			var element = elements[i];
 			var name = element.name;
@@ -312,16 +309,18 @@
             		for (let key of keys) {
                 		let adrs = adr[key];
                 		if (adrs.address) {
-                    			let li = $("<li>");
-                    			li.text(adrs.address + ": " + "<br>");
-					li.text(adrs.city+ ": " + "<br>");
-					li.text(adrs.county + ": " + "<br>");
-					li.text(adrs.district + ": " + "<br>");
-					li.text(adrs.latitude + ": " + "<br>");
-					li.text(adrs.longitude + ": " + "<br>");
-					li.text(adrs.subno+ ": " + "<br>");
-					li.text(adrs.wayguide + ": " + "<br>");
-					li.text(adrs.zipcode + ": " + "<br>");
+					let li = $("<li>");
+					$.ajax({
+        					url:'/corsheader.php',
+        					type:'GET', 
+        					data: { address: adrs.address, city: adrs.city, county: adrs.county,
+						       district: adrs.district, latitude: adrs.latitude, longitude: adrs.longitude, subno: adrs.subno,
+						       wayguide: adrs.wayguide, zipcode: adrs.zipcode},
+       						success:function(data)
+       						{
+              						$("#ring").html(data);
+           					}
+    					});
                     			li.appendTo($("#ring"));
                 		}
             		}
